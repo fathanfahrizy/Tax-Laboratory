@@ -15,7 +15,7 @@ export default function Home() {
       source: "Detik Finance", 
       date: "Maret 2026", 
       // Thumbnail: Uang / Finansial
-      img: "https://images.unsplash.com/photo-1580519542036-ed47c164d1cd?auto=format&fit=crop&w=800&q=80",
+      img: "/img-template/berita_1.png",
       link: "https://finance.detik.com/berita-ekonomi-bisnis/d-8388505/purbaya-buka-suara-soal-thr-swasta-kena-pajak-tapi-asn-tidak"
     },
     { 
@@ -23,7 +23,7 @@ export default function Home() {
       source: "Detik Sumut", 
       date: "Maret 2026", 
       // Thumbnail: Dokumen / Menulis Laporan
-      img: "https://images.unsplash.com/photo-1586486855514-8c633cc15394?auto=format&fit=crop&w=800&q=80",
+      img: "/img-template/berita_2.png",
       link: "https://www.detik.com/sumut/berita/d-8393244/surat-pemberitahuan-tahunan-jenis-cara-menyampaikan-batas-akhir"
     },
     { 
@@ -31,7 +31,7 @@ export default function Home() {
       source: "Detik Finance", 
       date: "Maret 2026", 
       // Thumbnail: Sistem Digital / Laptop
-      img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      img: "/img-template/berita_3.png",
       link: "https://finance.detik.com/berita-ekonomi-bisnis/d-8310031/cara-lengkap-aktivasi-akun-coretax-buat-lapor-spt"
     },
   ];
@@ -207,7 +207,7 @@ export default function Home() {
                 </Link>
               </div>
               <div className="lg:col-span-4 bg-slate-100 rounded-xl border border-gray-200 overflow-hidden h-64 lg:h-auto order-1 lg:order-2 shadow-sm">
-                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80" alt="Modul Praktikum" className="w-full h-full object-cover" />
+                <img src="/img-template/PDF.jpg" alt="Modul Praktikum" className="w-full h-full object-cover" />
               </div>
             </div>
 
