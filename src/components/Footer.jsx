@@ -1,52 +1,89 @@
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
   return (
-    <footer className="bg-indigo-950 pt-16 pb-8 border-t-4 border-orange-500">
+    <footer className="bg-white border-t border-slate-200 pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
+        
+        {/* === GRID MENU UTAMA === */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-10">
           
-          <div className="lg:col-span-2">
-            <h3 className="text-3xl font-extrabold text-white mb-4 tracking-tight">
-              Tax<span className="text-orange-500">Lab</span>
-            </h3>
-            <p className="text-indigo-200/80 leading-relaxed max-w-md font-medium">
-              Laboratorium Akuntansi Lanjut B.<br/>
-              Platform terpadu untuk kebutuhan modul, panduan, dan informasi praktikum perpajakan mahasiswa.
+          {/* KOLOM 1: BRANDING (Lebih Lebar) */}
+          <div className="lg:col-span-2 pr-0 lg:pr-8">
+            <div className="flex items-center gap-3 mb-4">
+              {/* Bingkai Logo Minimalis */}
+              <div className="w-10 h-10 bg-white rounded-lg p-1 border border-slate-200 shadow-sm flex items-center justify-center shrink-0">
+                <img 
+                  src="/Logo TaxLab.jpg" 
+                  alt="Logo TaxLab" 
+                  loading="lazy"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <h3 className="text-2xl font-black text-slate-900 tracking-tight">
+                Tax<span className="text-orange-500">Lab</span>
+              </h3>
+            </div>
+            <p className="text-slate-500 text-sm leading-relaxed max-w-sm mb-4">
+              Laboratorium Akuntansi Lanjut B Universitas Gunadarma. Platform terpadu penyedia modul pembelajaran, piranti lunak, dan pusat informasi praktikum.
             </p>
           </div>
-          
+
+          {/* KOLOM 2: AKSES CEPAT */}
           <div>
-            <h4 className="text-lg font-bold text-white mb-6">Akses Cepat</h4>
-            <ul className="space-y-4 font-medium">
+            <h4 className="text-slate-900 font-bold mb-4 text-base">Akses Cepat</h4>
+            <ul className="space-y-3 text-sm font-medium">
               <li>
-                <a href="#tata-tertib" className="text-indigo-200/80 hover:text-orange-400 transition-colors">
-                  Peraturan & Tata Tertib
-                </a>
+                <Link to="/modul" className="text-slate-500 hover:text-orange-500 transition-colors">Unduhan Modul</Link>
               </li>
               <li>
-                <a href="#unduhan" className="text-indigo-200/80 hover:text-orange-400 transition-colors">
-                  Unduhan Modul (PDF)
-                </a>
+                <Link to="/software-pajak" className="text-slate-500 hover:text-orange-500 transition-colors">Software Pajak</Link>
               </li>
               <li>
-                <a href="/oprec" className="text-orange-400 hover:text-orange-300 transition-colors">
-                  🔥 Info Recruitment
-                </a>
+                <Link to="/tata-tertib" className="text-slate-500 hover:text-orange-500 transition-colors">Tata Tertib Praktikum</Link>
+              </li>
+              <li>
+                <Link to="/oprec" className="text-orange-500 hover:text-orange-600 font-bold transition-colors">Info Recruitment</Link>
               </li>
             </ul>
           </div>
-          
+
+          {/* KOLOM 3: HUBUNGI KAMI (Tanpa Icon) */}
+          <div>
+            <h4 className="text-slate-900 font-bold mb-4 text-base">Hubungi Kami</h4>
+            <ul className="space-y-3 text-sm font-medium text-slate-500">
+              <li>
+                <Link to="/faq" className="hover:text-purple-800 transition-colors">Tanya Jawab (FAQ)</Link>
+              </li>
+              <li>
+                <Link to="/kontak" className="hover:text-purple-800 transition-colors">Kontak Staff</Link>
+              </li>
+              <li>
+                Email: <a href="mailto:labpajak@gunadarma.ac.id" className="hover:text-purple-800 transition-colors">labpajak@gunadarma.ac.id</a>
+              </li>
+              <li>
+                IG: <a href="https://instagram.com/taxlab.gunadarma" target="_blank" rel="noreferrer" className="hover:text-purple-800 transition-colors">@taxlab.gunadarma</a>
+              </li>
+            </ul>
+          </div>
+
         </div>
-        
-        <div className="border-t border-indigo-900/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-indigo-300/50 text-sm font-medium">
-            &copy; 2026 Tax Laboratory Gunadarma. All rights reserved.
+
+        {/* === BOTTOM COPYRIGHT & EXTRA LINKS === */}
+        <div className="border-t border-slate-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-slate-400 text-xs font-medium text-center md:text-left">
+            &copy; {new Date().getFullYear()} TaxLaboratorium Gunadarma. All rights reserved.
           </p>
-          <div className="flex gap-4">
-             {/* Socmed Icons (Dummy) */}
-            <div className="w-8 h-8 rounded-full bg-indigo-900/50 flex items-center justify-center text-indigo-300/50 cursor-pointer hover:bg-orange-500 hover:text-white transition-colors">IG</div>
-            <div className="w-8 h-8 rounded-full bg-indigo-900/50 flex items-center justify-center text-indigo-300/50 cursor-pointer hover:bg-orange-500 hover:text-white transition-colors">WA</div>
+          
+          <div className="flex flex-wrap justify-center gap-4 text-xs font-bold text-slate-400">
+            <Link to="/tentang-kami" className="hover:text-slate-600 transition-colors">Tentang Kami</Link>
+            <span className="hidden sm:inline">&bull;</span>
+            <Link to="/team" className="hover:text-slate-600 transition-colors">Daftar Asisten</Link>
+            <span className="hidden sm:inline">&bull;</span>
+            <Link to="/lokasi" className="hover:text-slate-600 transition-colors">Lokasi Lab</Link>
           </div>
         </div>
+
       </div>
     </footer>
   );
