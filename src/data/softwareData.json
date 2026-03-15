@@ -37,7 +37,7 @@
     "os": "Windows 10 / 11",
     "desc": "Aplikasi desktop untuk mempermudah Wajib Pajak dalam menghitung, mengisi, dan melaporkan Surat Pemberitahuan (SPT) Masa Pajak Penghasilan Pasal 21/26.",
     "linkDrive": "https://drive.google.com/drive/folders/1xnQDeXlWi0X2y9bZrc3rbD6HSNw2Zdf1",
-    "guideLink": "src/files/Langkah Download E-faktur.pdf",
+    "guideLink": "/files/Langkah Download E-faktur.pdf",
     "theme": { 
       "bg": "bg-orange-50", 
       "border": "border-orange-200", 
