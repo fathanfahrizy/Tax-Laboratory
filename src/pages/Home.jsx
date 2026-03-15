@@ -292,7 +292,7 @@ export default function Home() {
                 <h2 className="text-sm font-black text-orange-500 uppercase tracking-widest mb-1">Berita Perpajakan</h2>
                 <h3 className="text-3xl font-black text-gray-900">Wawasan Terkini</h3>
               </div>
-              <a href="https://finance.detik.com/pajak" target="_blank" rel="noreferrer" className="text-purple-800 font-bold hover:text-orange-500 text-sm uppercase tracking-wide group flex items-center gap-1 transition-colors" aria-label="Lihat portal berita pajak eksternal">
+              <a href="https://finance.detik.com" target="_blank" rel="noreferrer" className="text-purple-800 font-bold hover:text-orange-500 text-sm uppercase tracking-wide group flex items-center gap-1 transition-colors" aria-label="Lihat portal berita pajak eksternal">
                 Lihat Web Detik <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
               </a>
             </header>
