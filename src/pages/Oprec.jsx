@@ -67,7 +67,7 @@ export default function Oprec() {
                     >
                       {/* LCP OPTIMIZED */}
                       <img 
-                        src="/img-team/foto-angkatan.jpg" 
+                        src="/img-team/foto-angkatan.webp" 
                         alt="Angkatan Asisten Laboratorium Akuntansi Lanjut B" 
                         fetchpriority="high"
                         decoding="async"
@@ -175,7 +175,7 @@ export default function Oprec() {
                     <div className="absolute inset-0 bg-gradient-to-b from-purple-900/40 to-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold z-10">
                       <span className="bg-black/30 backdrop-blur-sm px-4 py-2 rounded-xl">Foto Batik Asisten</span>
                     </div>
-                    <img src="/img-team/asisten-photo.png" alt="Seragam Asisten Lab Akuntansi Pajak" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img src="/img-team/Asisten.jpg" alt="Seragam Asisten Lab Akuntansi Pajak" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                   </figure>
 
                   <div className="flex items-center gap-4 mb-8">
@@ -210,7 +210,7 @@ export default function Oprec() {
                     <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold z-10">
                       <span className="bg-black/30 backdrop-blur-sm px-4 py-2 rounded-xl">Foto IT Support</span>
                     </div>
-                    <img src="/img-team/it-photo.png" alt="Seragam IT Support TaxLaboratorium" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img src="/img-team/IT Support.webp" alt="Seragam IT Support TaxLaboratorium" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                   </figure>
 
                   <div className="flex items-center gap-4 mb-8">
@@ -324,7 +324,7 @@ export default function Oprec() {
           </button>
           <div className="relative z-10 w-full max-w-5xl flex flex-col items-center animate-in zoom-in-95 duration-300 transform-gpu">
             <img 
-              src="/img-team/foto-angkatan.jpg" 
+              src="/img-team/foto-angkatan.webp" 
               alt="Angkatan Sebelumnya Laboratorium Pajak" 
               loading="lazy"
               decoding="async"

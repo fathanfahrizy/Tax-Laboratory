@@ -88,23 +88,20 @@ export default function Navbar() {
       >
         <div className="w-full flex items-center justify-between relative z-20">
           
-          {/* === BRAND LOGO (MENGGUNAKAN GAMBAR ASLI) === */}
+          {/* === BRAND LOGO === */}
           <div className={`flex justify-start transition-all duration-500 ease-in-out ${isScrolled ? 'flex-1' : 'w-auto'}`}>
             <Link to="/" onClick={closeAll} className="flex items-center gap-3 sm:gap-4 shrink-0 group">
-              
-              {/* Wadah Logo Image - Skala proporsional saat di-scroll */}
               <div className={`bg-white rounded-full flex items-center justify-center overflow-hidden border border-slate-100 shadow-sm transition-all duration-500 group-hover:scale-105 group-hover:shadow-md shrink-0
                 ${isScrolled ? 'w-10 h-10 md:w-11 md:h-11 p-0.5' : 'w-12 h-12 md:w-14 md:h-14 p-1'}
               `}>
                 <img 
-                  src="/Logo TaxLab.jpg" 
+                  src="/img-template/LogoTaxLab.webp" 
                   alt="Logo TaxLab Gunadarma" 
                   loading="lazy"
                   className="w-full h-full object-contain rounded-full"
                 />
               </div>
 
-              {/* Teks Logo */}
               <div className="flex flex-col justify-center pt-0.5">
                 <span className={`font-black tracking-tight leading-none transition-colors duration-500 
                   ${isScrolled ? 'text-lg md:text-xl' : 'text-xl md:text-2xl'} 
@@ -223,6 +220,8 @@ export default function Navbar() {
                   <Link to="/tata-tertib" onClick={closeAll} className={`px-6 py-3.5 text-base md:text-lg ${getSubLinkStyle('/tata-tertib')}`}>Tata Tertib</Link>
                   <Link to="/modul" onClick={closeAll} className={`px-6 py-3.5 text-base md:text-lg ${getSubLinkStyle('/modul')}`}>Modul</Link>
                   <Link to="/software-pajak" onClick={closeAll} className={`px-6 py-3.5 text-base md:text-lg ${getSubLinkStyle('/software-pajak')}`}>Software Pajak</Link>
+                  {/* INI LINK PORTAL DJP DI MOBILE */}
+                  <a href="https://djponline.pajak.go.id/" target="_blank" rel="noreferrer" onClick={closeAll} className="px-6 py-3.5 text-base md:text-lg text-blue-600 hover:bg-blue-50/80">Portal DJP</a>
                 </div>
               </div>
             </div>

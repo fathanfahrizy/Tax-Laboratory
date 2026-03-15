@@ -2,6 +2,7 @@
   {
     "id": "acrobat",
     "name": "Adobe Acrobat Reader",
+    "icon": "/img-template/Adobe.webp",
     "version": "LATEST DC",
     "os": "Windows / Mac",
     "desc": "Perangkat lunak esensial yang wajib diinstal untuk membuka, membaca, dan mencetak dokumen modul praktikum serta formulir perpajakan berformat PDF.",
@@ -16,6 +17,7 @@
   {
     "id": "efaktur",
     "name": "Aplikasi e-Faktur",
+    "icon": "/img-template/E-Faktur.webp",
     "version": "V.3.2.0.0",
     "os": "Windows 64-bit + Java JRE",
     "desc": "Aplikasi resmi dari Direktorat Jenderal Pajak (DJP) yang digunakan untuk membuat dan melaporkan Faktur Pajak Elektronik secara terkomputerisasi.",
@@ -30,6 +32,7 @@
   {
     "id": "espt",
     "name": "e-SPT PPh Psl 21/26",
+    "icon": "/img-template/E-SPT.webp",
     "version": "V.2.4.0.0",
     "os": "Windows 10 / 11",
     "desc": "Aplikasi desktop untuk mempermudah Wajib Pajak dalam menghitung, mengisi, dan melaporkan Surat Pemberitahuan (SPT) Masa Pajak Penghasilan Pasal 21/26.",

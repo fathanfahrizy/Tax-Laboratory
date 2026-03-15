@@ -14,7 +14,7 @@ export default function Footer() {
               {/* Bingkai Logo Minimalis */}
               <div className="w-10 h-10 bg-white rounded-lg p-1 border border-slate-200 shadow-sm flex items-center justify-center shrink-0">
                 <img 
-                  src="/Logo TaxLab.jpg" 
+                  src="/img-template/LogoTaxLab.webp" 
                   alt="Logo TaxLab" 
                   loading="lazy"
                   className="w-full h-full object-contain"

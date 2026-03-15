@@ -10,6 +10,58 @@ export default function Lokasi() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState(null);
 
+  // =========================================
+  // STATE & LOGIC: LIVE JAM OPERASIONAL
+  // =========================================
+  const [now, setNow] = useState(new Date());
+
+  // Update waktu setiap 1 menit biar statusnya akurat tanpa perlu refresh
+  useEffect(() => {
+    const interval = setInterval(() => setNow(new Date()), 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Fungsi cerdas buat ngecek status berdasar jadwal spesifik tiap lokasi
+  const getLiveStatus = (hoursArray) => {
+    const daysMap = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+    const currentDayStr = daysMap[now.getDay()];
+    // Cari jadwal hari ini untuk lokasi yang sedang dicek
+    const todaySchedule = hoursArray.find(h => h.day === currentDayStr)?.time;
+
+    // 1. Cek kalau jadwalnya "Tutup" (Misal hari Minggu)
+    if (!todaySchedule || todaySchedule === "Tutup") {
+      return { text: "TUTUP", badgeBg: "bg-rose-50", badgeText: "text-rose-600", dotColor: "bg-rose-500", pulse: false };
+    }
+
+    // 2. Parse jam "08:00 - 17:00" atau "08:00 - 12:00"
+    const [startStr, endStr] = todaySchedule.split(" - ");
+    if (!startStr || !endStr) {
+      return { text: "TUTUP", badgeBg: "bg-rose-50", badgeText: "text-rose-600", dotColor: "bg-rose-500", pulse: false };
+    }
+
+    const startVal = parseInt(startStr.split(":")[0]) + parseInt(startStr.split(":")[1]) / 60;
+    const endVal = parseInt(endStr.split(":")[0]) + parseInt(endStr.split(":")[1]) / 60;
+    const currentVal = now.getHours() + now.getMinutes() / 60;
+
+    // 3. Cek apakah saat ini di luar jam operasional yang ditentukan?
+    if (currentVal < startVal || currentVal >= endVal) {
+      return { text: "TUTUP", badgeBg: "bg-rose-50", badgeText: "text-rose-600", dotColor: "bg-rose-500", pulse: false };
+    }
+
+    // 4. Cek Jam Istirahat (Khusus Hari Kerja: Senin - Jumat)
+    const dayIdx = now.getDay();
+    if (dayIdx >= 1 && dayIdx <= 5) {
+      const isFriday = dayIdx === 5;
+      const isBreak = isFriday ? (currentVal >= 11.5 && currentVal < 13.5) : (currentVal >= 12 && currentVal < 13);
+      if (isBreak) {
+        return { text: "ISTIRAHAT", badgeBg: "bg-amber-50", badgeText: "text-amber-700", dotColor: "bg-amber-500", pulse: true };
+      }
+    }
+
+    // 5. Kalau lolos semua filter di atas, berarti BUKA!
+    return { text: "BUKA", badgeBg: "bg-emerald-50", badgeText: "text-emerald-600", dotColor: "bg-emerald-500", pulse: true };
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -19,7 +71,6 @@ export default function Lokasi() {
     else document.body.style.overflow = 'unset';
   }, [isModalOpen]);
 
-  // OPTIMASI: useMemo agar tidak perlu meloop filter terus menerus saat idle
   const filteredLocations = useMemo(() => {
     return LOKASI_DATA.filter(loc => 
       loc.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -71,53 +122,60 @@ export default function Lokasi() {
 
               <div className="flex-1 overflow-y-auto custom-scrollbar p-2">
                 {filteredLocations.length > 0 ? (
-                  filteredLocations.map((loc) => (
-                    <div 
-                      key={loc.id} 
-                      onClick={() => setActiveLocation(loc)}
-                      className={`p-6 cursor-pointer border-b border-slate-100 last:border-0 transition-all duration-300 relative group
-                        ${activeLocation.id === loc.id ? 'bg-slate-50' : 'hover:bg-slate-50/50'}
-                      `}
-                    >
-                      <div className={`absolute left-0 top-0 bottom-0 w-1 transition-all duration-300
-                        ${activeLocation.id === loc.id ? 'bg-orange-500' : 'bg-transparent group-hover:bg-slate-200'}
-                      `}></div>
+                  filteredLocations.map((loc) => {
+                    const liveStatus = getLiveStatus(loc.hours); // Hitung Live Status di sini
 
-                      <div className="flex items-center justify-between gap-3 mb-3">
-                        <h3 className={`font-black text-lg tracking-wide transition-colors
-                          ${activeLocation.id === loc.id ? 'text-slate-900' : 'text-slate-700 group-hover:text-slate-900'}
-                        `}>
-                          {loc.title}
-                        </h3>
-                        <div className={`inline-flex shrink-0 items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider
-                          ${loc.status === 'Buka' ? 'bg-emerald-50 text-emerald-600' : 'bg-slate-100 text-slate-500'}
-                        `}>
-                          <div className={`w-1.5 h-1.5 rounded-full ${loc.status === 'Buka' ? 'bg-emerald-500' : 'bg-slate-400'}`}></div>
-                          {loc.status}
+                    return (
+                      <div 
+                        key={loc.id} 
+                        onClick={() => setActiveLocation(loc)}
+                        className={`p-6 cursor-pointer border-b border-slate-100 last:border-0 transition-all duration-300 relative group
+                          ${activeLocation.id === loc.id ? 'bg-slate-50' : 'hover:bg-slate-50/50'}
+                        `}
+                      >
+                        <div className={`absolute left-0 top-0 bottom-0 w-1 transition-all duration-300
+                          ${activeLocation.id === loc.id ? 'bg-orange-500' : 'bg-transparent group-hover:bg-slate-200'}
+                        `}></div>
+
+                        <div className="flex items-center justify-between gap-3 mb-3">
+                          <h3 className={`font-black text-lg tracking-wide transition-colors
+                            ${activeLocation.id === loc.id ? 'text-slate-900' : 'text-slate-700 group-hover:text-slate-900'}
+                          `}>
+                            {loc.title}
+                          </h3>
+                          
+                          {/* BADGE LIVE STATUS (LIST) */}
+                          <div className={`inline-flex shrink-0 items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider ${liveStatus.badgeBg} ${liveStatus.badgeText}`}>
+                            <div className="relative flex items-center justify-center">
+                              {liveStatus.pulse && <span className={`absolute inline-flex h-full w-full rounded-full ${liveStatus.dotColor} opacity-40 animate-ping`}></span>}
+                              <div className={`w-1.5 h-1.5 rounded-full ${liveStatus.dotColor}`}></div>
+                            </div>
+                            {liveStatus.text}
+                          </div>
+                        </div>
+
+                        <p className="text-slate-500 text-sm leading-relaxed mb-5 pr-2 line-clamp-2">
+                          {loc.address}
+                        </p>
+
+                        <div className="flex flex-wrap gap-3">
+                          <a href={loc.directionUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2.5 rounded-xl text-sm font-bold transition-colors w-full sm:w-auto shadow-sm">
+                            <MapPinIcon /> Get Direction
+                          </a>
+                          
+                          <button 
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleOpenModal(loc);
+                            }}
+                            className="border-2 border-slate-200 hover:border-slate-800 text-slate-700 hover:text-slate-900 px-4 py-2.5 rounded-xl text-sm font-bold transition-colors w-full sm:w-auto"
+                          >
+                            More Info
+                          </button>
                         </div>
                       </div>
-
-                      <p className="text-slate-500 text-sm leading-relaxed mb-5 pr-2 line-clamp-2">
-                        {loc.address}
-                      </p>
-
-                      <div className="flex flex-wrap gap-3">
-                        <a href={loc.directionUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2.5 rounded-xl text-sm font-bold transition-colors w-full sm:w-auto shadow-sm">
-                          <MapPinIcon /> Get Direction
-                        </a>
-                        
-                        <button 
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleOpenModal(loc);
-                          }}
-                          className="border-2 border-slate-200 hover:border-slate-800 text-slate-700 hover:text-slate-900 px-4 py-2.5 rounded-xl text-sm font-bold transition-colors w-full sm:w-auto"
-                        >
-                          More Info
-                        </button>
-                      </div>
-                    </div>
-                  ))
+                    );
+                  })
                 ) : (
                   <div className="p-8 text-center text-slate-400 font-medium">
                     Lokasi tidak ditemukan.
@@ -126,7 +184,7 @@ export default function Lokasi() {
               </div>
             </div>
 
-            {/* KOLOM KANAN: MAPS (Lazy Load iframe) */}
+            {/* KOLOM KANAN: MAPS */}
             <div className="w-full lg:w-[65%] h-[50vh] lg:h-full bg-slate-100 relative overflow-hidden">
               {activeLocation ? (
                 <iframe
@@ -158,7 +216,7 @@ export default function Lokasi() {
       </main>
 
       {/* =========================================
-          MODAL "MORE INFO" (PORTAL + FILL GAMBAR)
+          MODAL "MORE INFO"
       ========================================= */}
       {isModalOpen && modalData && createPortal(
         <div className="fixed inset-0 z-[90] flex items-center justify-center px-4 py-6 pt-[100px] sm:pt-[120px] md:px-8">
@@ -170,7 +228,6 @@ export default function Lokasi() {
             </button>
             
             <div className="w-full md:w-5/12 h-64 md:h-auto relative bg-slate-100 shrink-0">
-               {/* Lazy load dan object-fill sesuai request sebelumnya */}
                <img src={modalData.image} className="w-full h-full object-fill" alt={`Gedung ${modalData.title}`} loading="lazy" decoding="async" onError={(e) => { e.target.src = "https://placehold.co/600x800/1e293b/ffffff?text=FOTO+GEDUNG" }} />
             </div>
             
@@ -178,11 +235,22 @@ export default function Lokasi() {
                <h2 className="text-[1.35rem] font-black text-slate-900 mb-1">Detail Lokasi</h2>
                <div className="flex flex-wrap items-center gap-3 mb-2 mt-3">
                   <h3 className="font-black text-lg text-slate-800 uppercase tracking-tight">{modalData.title}</h3>
-                  <div className={`inline-flex shrink-0 items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider ${modalData.status === 'Buka' ? 'bg-orange-100 text-orange-700' : 'bg-slate-200 text-slate-600'}`}>
-                        <div className={`w-2 h-2 rounded-full ${modalData.status === 'Buka' ? 'bg-orange-500 animate-pulse' : 'bg-slate-500'}`}></div>
-                        {modalData.status}
-                  </div>
+                  
+                  {/* BADGE LIVE STATUS (MODAL) */}
+                  {(() => {
+                    const modalLiveStatus = getLiveStatus(modalData.hours);
+                    return (
+                      <div className={`inline-flex shrink-0 items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider ${modalLiveStatus.badgeBg} ${modalLiveStatus.badgeText}`}>
+                          <div className="relative flex items-center justify-center">
+                            {modalLiveStatus.pulse && <span className={`absolute inline-flex h-full w-full rounded-full ${modalLiveStatus.dotColor} opacity-40 animate-ping`}></span>}
+                            <div className={`w-2 h-2 rounded-full ${modalLiveStatus.dotColor}`}></div>
+                          </div>
+                          {modalLiveStatus.text}
+                      </div>
+                    );
+                  })()}
                </div>
+               
                <p className="text-slate-600 text-[15px] leading-relaxed mb-8 border-b border-slate-100 pb-6">{modalData.address}</p>
                <h4 className="font-extrabold text-slate-900 mb-4 text-base">Jam Operasional</h4>
                <div className="grid grid-cols-1 gap-2 mb-8 text-[14px] text-slate-600 font-medium">
