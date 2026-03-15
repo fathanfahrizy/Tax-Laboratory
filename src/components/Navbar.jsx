@@ -149,7 +149,7 @@ export default function Navbar() {
                   <Link to="/tata-tertib" onClick={closeAll} className={`block px-6 py-3.5 text-base ${getSubLinkStyle('/tata-tertib')}`}>Tata Tertib</Link>
                   <Link to="/modul" onClick={closeAll} className={`block px-6 py-3.5 text-base ${getSubLinkStyle('/modul')}`}>Modul</Link>
                   <Link to="/software-pajak" onClick={closeAll} className={`block px-6 py-3.5 text-base ${getSubLinkStyle('/software-pajak')}`}>Software Pajak</Link>
-                  <a href="https://djponline.pajak.go.id/" target="_blank" rel="noreferrer" onClick={closeAll} className="block px-6 py-3.5 text-base text-blue-600 hover:bg-blue-50/80">Portal DJP</a>
+                  <a href="https://pajak.go.id/" target="_blank" rel="noreferrer" onClick={closeAll} className="block px-6 py-3.5 text-base text-blue-600 hover:bg-blue-50/80">Portal DJP</a>
                 </div>
               )}
             </div>
@@ -221,7 +221,7 @@ export default function Navbar() {
                   <Link to="/modul" onClick={closeAll} className={`px-6 py-3.5 text-base md:text-lg ${getSubLinkStyle('/modul')}`}>Modul</Link>
                   <Link to="/software-pajak" onClick={closeAll} className={`px-6 py-3.5 text-base md:text-lg ${getSubLinkStyle('/software-pajak')}`}>Software Pajak</Link>
                   {/* INI LINK PORTAL DJP DI MOBILE */}
-                  <a href="https://djponline.pajak.go.id/" target="_blank" rel="noreferrer" onClick={closeAll} className="px-6 py-3.5 text-base md:text-lg text-blue-600 hover:bg-blue-50/80">Portal DJP</a>
+                  <a href="https://pajak.go.id/" target="_blank" rel="noreferrer" onClick={closeAll} className="px-6 py-3.5 text-base md:text-lg text-blue-600 hover:bg-blue-50/80">Portal DJP</a>
                 </div>
               </div>
             </div>
