@@ -59,10 +59,10 @@ export default function Footer() {
                 <Link to="/kontak" className="hover:text-purple-800 transition-colors">Kontak Staff</Link>
               </li>
               <li>
-                Email: <a href="mailto:labpajak@gunadarma.ac.id" className="hover:text-purple-800 transition-colors">labpajak@gunadarma.ac.id</a>
+                Email: <a href="mailto:labpajak@gunadarma.ac.id" className="hover:text-purple-800 transition-colors">taxlaboratory@gunadarma.ac.id</a>
               </li>
               <li>
-                IG: <a href="https://instagram.com/taxlab.gunadarma" target="_blank" rel="noreferrer" className="hover:text-purple-800 transition-colors">@taxlab.gunadarma</a>
+                IG: <a href="https://instagram.com/taxlaboratory" target="_blank" rel="noreferrer" className="hover:text-purple-800 transition-colors">@taxlaboratory</a>
               </li>
             </ul>
           </div>
