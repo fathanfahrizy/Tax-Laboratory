@@ -30,7 +30,7 @@ export default function Kontak() {
           
           {/* Inject Keyword Utama di H1 */}
           <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-6">
-            Hubungi Tim <span className="text-purple-900">TaxLaboratoy</span>
+            Hubungi Tim <span className="text-purple-900">TaxLaboratory</span>
           </h1>
           
           {/* Inject Keyword Turunan di Paragraf */}
