@@ -86,7 +86,6 @@ export default function Navbar() {
       >
         <div className="w-full flex items-center justify-between relative z-20">
           
-          {/* === KIRI: BRAND LOGO === */}
           <div className={`flex justify-start transition-all duration-300 ease-out ${isScrolled ? 'flex-1' : 'w-auto'}`}>
             <Link to="/" onClick={closeAll} className="flex items-center gap-3 shrink-0 group">
               <div className={`bg-white rounded-full flex items-center justify-center overflow-hidden border border-slate-100 shadow-sm transition-all duration-300 group-hover:scale-105 shrink-0
@@ -105,7 +104,6 @@ export default function Navbar() {
             </Link>
           </div>
           
-          {/* === TENGAH: DESKTOP NAVIGATION === */}
           <div className={`hidden lg:flex gap-8 font-bold text-base items-center transition-all duration-300 ${isScrolled ? 'justify-center shrink-0' : 'flex-1 justify-end'}`}>
             <Link to="/" onClick={closeAll} className={`transition-colors relative group ${getLinkStyle('/')}`}>
               Beranda
@@ -134,7 +132,7 @@ export default function Navbar() {
                   <Link to="/tata-tertib" onClick={closeAll} className={`block px-6 py-3 ${getSubLinkStyle('/tata-tertib')}`}>Tata Tertib</Link>
                   <Link to="/modul" onClick={closeAll} className={`block px-6 py-3 ${getSubLinkStyle('/modul')}`}>Modul</Link>
                   <Link to="/software-pajak" onClick={closeAll} className={`block px-6 py-3 ${getSubLinkStyle('/software-pajak')}`}>Software Pajak</Link>
-                  <a href="https://djponline.pajak.go.id/" target="_blank" rel="noreferrer" onClick={closeAll} className="block px-6 py-3 text-blue-600 hover:bg-blue-50/80">Portal DJP</a>
+                  <a href="https://www.pajak.go.id/" target="_blank" rel="noreferrer" onClick={closeAll} className="block px-6 py-3 text-blue-600 hover:bg-blue-50/80">Portal DJP</a>
                 </div>
               )}
             </div>
@@ -158,8 +156,6 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* === KANAN: BALANCER & MOBILE TOGGLE === */}
-          {/* Ini nggak ada lg:hidden di div-nya biar tetep ngasih spasi / penyeimbang pas di mode Desktop */}
           <div className={`flex justify-end transition-all duration-300 ease-out ${isScrolled ? 'flex-1' : 'w-auto'}`}>
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
