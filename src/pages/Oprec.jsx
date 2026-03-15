@@ -37,10 +37,6 @@ export default function Oprec() {
               <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
                 
                 <header className="lg:w-1/2 text-center lg:text-left">
-                  <div className="inline-flex items-center gap-3 bg-white/10 border border-white/20 px-5 py-2 rounded-full mb-8 shadow-sm backdrop-blur-md">
-                    <div className="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></div>
-                    <span className="text-xs font-bold text-white tracking-[0.2em] uppercase">Rekrutmen 2026</span>
-                  </div>
                   
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight leading-[1.15]">
                     Ambil Peranmu di <br/>
