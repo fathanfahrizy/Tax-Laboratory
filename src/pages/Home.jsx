@@ -272,7 +272,7 @@ export default function Home() {
                   </Link>
                 </div>
                 <figure className="lg:col-span-4 bg-slate-100 rounded-xl border border-gray-200 overflow-hidden h-64 lg:h-auto order-1 lg:order-2 shadow-sm">
-                  <img src="/img-template/PDF.webp" alt="Modul Praktikum TaxLaboratorium" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                  <img src="/img-template/Modul.webp" alt="Modul Praktikum TaxLaboratorium" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </figure>
               </article>
             </ScrollReveal>
