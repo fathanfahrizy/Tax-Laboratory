@@ -95,7 +95,7 @@ export default function Home() {
             <header className="w-full lg:w-6/12 flex flex-col justify-center mt-6 lg:mt-0">
               <h1 className="text-4xl md:text-5xl lg:text-[3.8rem] font-black text-white leading-[1.1] mb-6 tracking-tighter animate-[fadeIn_0.5s_ease-out]">
                 Laboratorium <br/> 
-                <span className="text-orange-500">Akuntansi Lanjut B.</span>
+                <span className="text-orange-500">Akuntansi Lanjut B</span>
               </h1>
               
               <p className="text-purple-100/90 text-base md:text-lg font-medium mb-8 max-w-lg leading-relaxed text-justify animate-[fadeIn_0.7s_ease-out]">
@@ -393,7 +393,7 @@ export default function Home() {
               onClick={(e) => e.stopPropagation()} 
             />
             <p className="text-white/90 mt-6 font-bold tracking-widest uppercase text-xs md:text-sm bg-black/50 px-6 py-2.5 rounded-full border border-white/10">
-              Suasana Laboratorium Akuntansi Lanjut B
+              Staff dan Asisten Laboratorium Akuntansi Lanjut B
             </p>
           </div>
         </div>,

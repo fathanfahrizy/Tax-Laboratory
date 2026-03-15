@@ -175,7 +175,7 @@ export default function Oprec() {
                     <div className="absolute inset-0 bg-gradient-to-b from-purple-900/40 to-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold z-10">
                       <span className="bg-black/30 backdrop-blur-sm px-4 py-2 rounded-xl">Foto Batik Asisten</span>
                     </div>
-                    <img src="/img-team/Asisten.jpg" alt="Seragam Asisten Lab Akuntansi Pajak" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img src="/img-team/Asisten.webp" alt="Seragam Asisten Lab Akuntansi Pajak" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                   </figure>
 
                   <div className="flex items-center gap-4 mb-8">
@@ -333,7 +333,7 @@ export default function Oprec() {
             />
             <div className="mt-6 md:mt-8 px-6 py-2.5 bg-black/50 border border-white/10 rounded-full shadow-lg backdrop-blur-md">
               <p className="text-white/90 text-xs sm:text-sm font-black tracking-[0.15em] uppercase text-center">
-                Suasana Laboratorium Akuntansi Lanjut B
+                Asisten 2025/2026 Laboratorium Lanjut B
               </p>
             </div>
           </div>

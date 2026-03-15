@@ -1,84 +1,127 @@
 import { useState, useRef, useEffect } from 'react';
 
+// =========================================
+// 1. IKON STATIS (REUSABLE)
+// =========================================
 export const CheckIcon = () => (
-  <svg className="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+  <svg className="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+  </svg>
 );
 
 export const CloseIcon = () => (
-  <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" /></svg>
+  <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+  </svg>
 );
 
+// =========================================
+// 2. KARTU PERSYARATAN (ON-PAGE EFFECT BERULANG)
+// =========================================
 export const ScrollRevealCard = ({ children, className = "" }) => {
   const [isActive, setIsActive] = useState(false);
   const cardRef = useRef(null);
 
   useEffect(() => {
-    let delay;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) delay = setTimeout(() => setIsActive(true), 100); 
-        else { clearTimeout(delay); setIsActive(false); }
+        if (entry.isIntersecting) setIsActive(true); 
+        else setIsActive(false);
       },
       { rootMargin: "-20% 0px -20% 0px", threshold: 0 }
     );
     if (cardRef.current) observer.observe(cardRef.current);
-    return () => { if (delay) clearTimeout(delay); if (cardRef.current) observer.unobserve(cardRef.current); };
+    return () => { if (cardRef.current) observer.unobserve(cardRef.current); };
   }, []);
 
   return (
-    <div ref={cardRef} className={`${className} transform-gpu will-change-transform transition-all duration-300 ${isActive ? 'max-lg:!border-orange-300 max-lg:!shadow-xl max-lg:-translate-y-2 max-lg:[&_div>svg]:scale-110 max-lg:[&_div>svg]:text-white max-lg:[&>div:first-child]:bg-orange-500 max-lg:[&>span]:text-orange-50' : ''}`}>
+    <div 
+      ref={cardRef} 
+      className={`${className} transform-gpu will-change-transform transition-all duration-500 
+      ${isActive 
+        ? 'max-lg:border-orange-300 max-lg:shadow-xl max-lg:-translate-y-2 max-lg:[&_div>svg]:scale-110 max-lg:[&_div>svg]:bg-orange-500 max-lg:[&_div>svg]:text-white max-lg:[&>div:first-child]:bg-orange-500 max-lg:[&>span]:text-orange-50' 
+        : ''}
+      `}
+    >
       {children}
     </div>
   );
 };
 
-export const TimelineRevealItem = ({ isLeft, alur }) => {
-  const [isActive, setIsActive] = useState(false);
+// =========================================
+// 3. ITEM TIMELINE (RESPONSIVE FIX - ANTI OVERLAP)
+// =========================================
+export const TimelineRevealItem = ({ alur, isLeft }) => {
+  const [inView, setInView] = useState(false);
   const itemRef = useRef(null);
 
   useEffect(() => {
-    let delay;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) delay = setTimeout(() => setIsActive(true), 150);
-        else { clearTimeout(delay); setIsActive(false); }
+        if (entry.isIntersecting) setInView(true);
+        else setInView(false);
       },
-      { rootMargin: "-25% 0px -25% 0px", threshold: 0 }
+      { rootMargin: "-40% 0px -40% 0px", threshold: 0 }
     );
     if (itemRef.current) observer.observe(itemRef.current);
-    return () => { if (delay) clearTimeout(delay); if (itemRef.current) observer.unobserve(itemRef.current); };
+    return () => { if (itemRef.current) observer.unobserve(itemRef.current); };
   }, []);
 
   return (
-    <div ref={itemRef} className="relative w-full group py-2 md:py-6 transform-gpu will-change-transform">
-      <div className={`absolute left-[35px] md:left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 border-[4px] rounded-full flex items-center justify-center text-xl font-black z-20 transition-all duration-300 shadow-sm
-        md:bg-white md:border-slate-200 md:text-slate-400 md:group-hover:border-indigo-500 md:group-hover:bg-indigo-500 md:group-hover:text-white
-        ${isActive ? 'max-md:border-indigo-500 max-md:bg-indigo-500 max-md:text-white max-md:scale-110' : 'max-md:bg-white max-md:border-slate-200 max-md:text-slate-400'}
-      `}>
-        {alur.step}
-      </div>
-
-      <div className={`w-[calc(100%-80px)] ml-auto md:w-[45%] ${isLeft ? 'md:ml-0 md:mr-auto' : 'md:ml-auto md:mr-0'}`}>
-        <div className={`p-6 md:p-8 rounded-[1.5rem] border transition-all duration-300 relative z-10 ${isLeft ? 'md:text-right' : 'md:text-left'}
-          md:bg-white md:border-slate-200 md:shadow-sm md:group-hover:shadow-lg md:group-hover:-translate-y-1 md:group-hover:border-indigo-200
-          ${isActive ? 'max-md:bg-white max-md:shadow-lg max-md:-translate-y-1 max-md:border-indigo-200' : 'max-md:bg-white max-md:border-slate-200 max-md:shadow-sm max-md:translate-y-0'}
+    <div 
+      ref={itemRef} 
+      className={`relative flex items-start md:items-center justify-between w-full mb-10 md:mb-20 group/item
+        ${isLeft ? 'md:flex-row-reverse' : 'md:flex-row'}
+      `}
+    >
+      {/* KONTEN KARTU */}
+      <div className={`w-full md:w-[45%] pl-16 md:pl-0 flex ${isLeft ? 'md:justify-end md:text-right' : 'md:justify-start md:text-left'}`}>
+        <div className={`w-full bg-white p-5 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border transition-all duration-500 transform-gpu
+          ${inView ? 'border-orange-500 shadow-xl md:shadow-2xl md:shadow-orange-500/10 -translate-y-1' : 'border-slate-100 shadow-sm'}
+          lg:group-hover/item:border-orange-300 lg:group-hover/item:-translate-y-1
         `}>
-          <div className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-white rotate-45 border-slate-200 ${isLeft ? '-right-2 border-t border-r' : '-left-2 border-b border-l'}`}></div>
-          <div className={`inline-block font-black text-[0.65rem] uppercase tracking-widest py-1.5 px-3 rounded-lg mb-3 border transition-colors
-            md:bg-orange-50 md:text-orange-600 md:border-orange-100 md:group-hover:bg-orange-500 md:group-hover:text-white
-            ${isActive ? 'max-md:bg-orange-500 max-md:text-white max-md:border-orange-500' : 'max-md:bg-orange-50 max-md:text-orange-600 max-md:border-orange-100'}
-          `}>
-            {alur.date}
+          <div className={`flex flex-wrap items-center gap-2 mb-3 ${isLeft ? 'md:flex-row-reverse' : ''}`}>
+            <span className={`text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] px-2.5 py-1.5 rounded-lg transition-colors
+              ${inView ? 'bg-orange-500 text-white' : 'bg-slate-100 text-slate-400'}
+              lg:group-hover/item:bg-orange-500 lg:group-hover/item:text-white
+            `}>
+              TAHAPAN {alur.step}
+            </span>
+            <span className="text-slate-400 text-[10px] md:text-xs font-bold">{alur.date}</span>
           </div>
-          <h4 className={`text-xl font-black mb-2 transition-colors
-            md:text-slate-900 md:group-hover:text-indigo-600
-            ${isActive ? 'max-md:text-indigo-600' : 'max-md:text-slate-900'}
+          
+          <h4 className={`text-lg md:text-2xl font-black mb-1.5 transition-colors leading-tight
+            ${inView ? 'text-orange-600' : 'text-slate-900'}
+            lg:group-hover/item:text-orange-600
           `}>
             {alur.title}
           </h4>
-          <p className="text-slate-500 text-sm font-medium leading-relaxed">{alur.desc}</p>
+          <p className="text-slate-500 text-xs md:text-base font-medium leading-relaxed">
+            {alur.desc}
+          </p>
         </div>
       </div>
+
+      {/* LINGKARAN TENGAH (FIXED POSISI DI HP) */}
+      <div className={`absolute left-0 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center z-10 transition-all duration-500 transform-gpu
+        ${inView ? 'scale-110 md:scale-125' : 'scale-100'}
+      `}>
+        <div className={`w-10 h-10 md:w-16 md:h-16 rounded-full border-4 border-[#fafafa] flex items-center justify-center transition-all duration-500 shadow-lg
+          ${inView ? 'bg-orange-500 text-white shadow-orange-500/30' : 'bg-white text-slate-300'}
+          lg:group-hover/item:bg-orange-500 lg:group-hover/item:text-white
+        `}>
+          {alur.icon ? (
+            <div className={`transition-colors duration-500 w-5 h-5 md:w-7 md:h-7 flex items-center justify-center ${inView ? '[&>svg]:text-white' : ''} lg:group-hover/item:[&>svg]:text-white`}>
+              {alur.icon}
+            </div>
+          ) : (
+            <span className="text-base md:text-xl font-black">{alur.step}</span>
+          )}
+        </div>
+      </div>
+
+      {/* BALANCER (Desktop Only) */}
+      <div className="hidden md:block w-[45%]"></div>
     </div>
   );
 };
