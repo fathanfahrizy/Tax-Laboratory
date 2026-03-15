@@ -30,7 +30,7 @@ export default function Kontak() {
           
           {/* Inject Keyword Utama di H1 */}
           <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-6">
-            Hubungi Tim <span className="text-purple-900">TaxLaboratorium.</span>
+            Hubungi Tim <span className="text-purple-900">TaxLaboratoy</span>
           </h1>
           
           {/* Inject Keyword Turunan di Paragraf */}
@@ -53,11 +53,11 @@ export default function Kontak() {
                 Kirimkan pertanyaan atau surat resmi Anda melalui alamat email institusi kami.
               </p>
               <a 
-                href="mailto:labpajak@gunadarma.ac.id"
+                href="mailto:taxlaboratory@gunadarma.ac.id"
                 aria-label="Kirim email ke labpajak@gunadarma.ac.id" 
                 className="mt-auto bg-slate-900 text-white font-black px-8 py-4 rounded-2xl hover:bg-purple-900 transition-colors shadow-lg"
               >
-                labpajak@gunadarma.ac.id
+                taxlaboratory@gunadarma.ac.id
               </a>
             </article>
           </ContactCard>
@@ -73,13 +73,13 @@ export default function Kontak() {
                 Ikuti info praktikum terbaru dan kegiatan asisten melalui akun media sosial kami.
               </p>
               <a 
-                href="https://instagram.com/taxlab.gunadarma" 
+                href="https://www.instagram.com/taxlaboratory/" 
                 target="_blank" 
                 rel="noreferrer"
                 aria-label="Kunjungi Instagram resmi TaxLaboratorium Gunadarma"
                 className="mt-auto bg-orange-500 text-white font-black px-8 py-4 rounded-2xl hover:bg-orange-600 transition-colors shadow-lg"
               >
-                @taxlab.gunadarma
+                @taxlaboratory
               </a>
             </article>
           </ContactCard>
