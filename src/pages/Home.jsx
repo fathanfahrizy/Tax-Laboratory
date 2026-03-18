@@ -282,45 +282,6 @@ export default function Home() {
       </section>
 
       {/* =========================================
-          NEWS / ARTIKEL BOX
-      ========================================= */}
-      <section className="py-20 bg-white border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-6">
-          <ScrollReveal>
-            <header className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 sm:mb-10 gap-4 sm:gap-6 border-b border-gray-200 pb-4">
-              <div>
-                <h2 className="text-sm font-black text-orange-500 uppercase tracking-widest mb-1">Berita Perpajakan</h2>
-                <h3 className="text-3xl font-black text-gray-900">Wawasan Terkini</h3>
-              </div>
-              <a href="https://finance.detik.com" target="_blank" rel="noreferrer" className="text-purple-800 font-bold hover:text-orange-500 text-sm uppercase tracking-wide group flex items-center gap-1 transition-colors" aria-label="Lihat portal berita pajak eksternal">
-                Lihat Web Detik <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
-              </a>
-            </header>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {ARTICLES_DATA.map((art, i) => (
-              <ScrollReveal key={i} delay={i * 100}>
-                <a href={art.link} target="_blank" rel="noreferrer" className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:shadow-md hover:border-purple-200 transition-all cursor-pointer h-full">
-                  <div className="w-full aspect-[4/3] sm:aspect-video overflow-hidden relative bg-slate-200">
-                    <img src={art.img.replace(/\.(png|jpg|jpeg)$/i, '.webp')} alt={`Berita Lab: ${art.title}`} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  </div>
-                  
-                  <div className="p-6 flex flex-col flex-grow">
-                    <div className="flex items-center justify-between mb-3 border-b border-gray-100 pb-3">
-                      <span className="text-orange-600 font-bold text-[10px] uppercase tracking-widest">{art.source}</span>
-                      <span className="text-gray-400 text-xs font-medium">{art.date}</span>
-                    </div>
-                    <h4 className="text-lg font-bold text-gray-900 leading-snug group-hover:text-purple-800 transition-colors line-clamp-3">{art.title}</h4>
-                  </div>
-                </a>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================
           LOKASI BOX
       ========================================= */}
       <section className="py-20 bg-[#fafafa]">
