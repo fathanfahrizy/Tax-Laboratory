@@ -151,7 +151,7 @@ export default function TentangKami() {
                 <strong className="text-purple-900 font-black">Laboratorium Akuntansi Lanjut B</strong> adalah pusat <strong>Laboratorium Pajak</strong> unggulan di Fakultas Ekonomi Universitas Gunadarma. Kami hadir untuk mengubah teori kelas menjadi pengalaman dunia nyata melalui simulasi perpajakan yang interaktif dan aplikatif.
               </p>
               <p>
-                Melalui modul praktikum terstruktur dan penggunaan piranti lunak berstandar industri, <strong>Lab Akuntansi Pajak</strong> ini membekali mahasiswa dengan keterampilan teknis mutakhir. Tujuan kami satu: mencetak profesional muda yang kompeten dan siap menghadapi tantangan ekosistem perpajakan digital.
+                Melalui modul praktikum terstruktur dan penggunaan perangkat lunak berstandar industri, <strong>Lab Akuntansi Pajak</strong> ini membekali mahasiswa dengan keterampilan teknis mutakhir. Tujuan kami satu: mencetak profesional muda yang kompeten dan siap menghadapi tantangan ekosistem perpajakan digital.
               </p>
             </div>
 
