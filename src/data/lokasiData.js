@@ -86,7 +86,7 @@ export const LOKASI_DATA = [
     status: "Buka",
     mapUrl: "https://maps.google.com/maps?q=Universitas%20Gunadarma%20Kampus%20K&t=&z=15&ie=UTF8&iwloc=&output=embed",
     directionUrl: "https://www.google.com/maps/place/Gunadarma+University+Campus+K/@-6.2320947,106.613187,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69fc1acf84837d:0x6642a0008730b471!8m2!3d-6.2320947!4d106.6157619!16s%2Fg%2F11crztx571?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D",
-    image: "/img-template/Kampus K.webp",
+    image: "/img-template/Kampus H.webp",
     hours: [
       { day: "Senin", time: "08:00 - 17:00" }, { day: "Selasa", time: "08:00 - 17:00" },
       { day: "Rabu", time: "08:00 - 17:00" }, { day: "Kamis", time: "08:00 - 17:00" },
