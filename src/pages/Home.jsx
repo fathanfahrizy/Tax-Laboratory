@@ -122,25 +122,23 @@ export default function Home() {
                 `}
                 onClick={() => setIsModalOpen(true)}
               >
-                <div className="w-full aspect-[4/3] sm:aspect-video rounded-[1.8rem] overflow-hidden relative shadow-inner">
-                  <img 
-                    src="/img-team/foto-taxlab.webp" 
-                    alt="Suasana Praktikum di TaxLaboratorium" 
-                    fetchpriority="high"
-                    decoding="async"
-                    className={`w-full h-full object-cover transition-transform duration-700 ease-out transform-gpu
-                      lg:group-hover:scale-105
-                      ${heroInView ? 'max-lg:scale-105' : 'max-lg:scale-100'}
-                    `} 
-                  />
-                  <div className={`absolute inset-0 transition-colors duration-500 flex items-center justify-center
-                    lg:bg-transparent lg:group-hover:bg-slate-900/30
-                    ${heroInView ? 'max-lg:bg-slate-900/30' : 'max-lg:bg-transparent'}
-                  `}>
-                    <div className={`bg-white/20 backdrop-blur-md text-white p-4 rounded-full transition-all duration-500 shadow-2xl border border-white/30 transform-gpu
-                      lg:opacity-0 lg:scale-50 lg:group-hover:opacity-100 lg:group-hover:scale-100
-                      ${heroInView ? 'max-lg:opacity-100 max-lg:scale-100' : 'max-lg:opacity-0 max-lg:scale-50'}
-                    `}>
+                
+                {/* FIX: aspect-video diganti h-[260px] di HP biar foto lega & proporsional */}
+                <div className="w-full h-[260px] sm:h-[350px] lg:h-auto lg:aspect-video rounded-[1.8rem] overflow-hidden relative shadow-inner">
+                    <img 
+                      src="/img-team/foto-taxlab.webp" 
+                      alt="Suasana Praktikum di TaxLaboratorium" 
+                      fetchpriority="high"
+                      decoding="async"
+                      className={`w-full h-full object-cover object-center transition-transform duration-700 ease-out transform-gpu
+                        lg:group-hover:scale-105
+                        ${heroInView ? 'max-lg:scale-105' : 'max-lg:scale-100'}
+                      `} 
+                    />
+                    
+                  {/* FIX: Overlay Icon Zoom dibikin HANYA MUNCUL DI PC (hidden lg:flex) */}
+                  <div className="absolute inset-0 transition-colors duration-500 hidden lg:flex items-center justify-center lg:bg-transparent lg:group-hover:bg-slate-900/30">
+                    <div className="bg-white/20 backdrop-blur-md text-white p-4 rounded-full transition-all duration-500 shadow-2xl border border-white/30 transform-gpu lg:opacity-0 lg:scale-50 lg:group-hover:opacity-100 lg:group-hover:scale-100">
                       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
                     </div>
                   </div>
