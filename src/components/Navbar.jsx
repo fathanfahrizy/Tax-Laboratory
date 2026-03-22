@@ -80,7 +80,7 @@ export default function Navbar() {
       <nav 
         className={`pointer-events-auto w-full lg:transition-all transition-[background-color,border-radius,box-shadow,padding,max-width,border-color] duration-300 ease-out flex flex-col items-center relative transform-gpu
           ${isScrolled 
-            ? 'max-w-[1800px] rounded-full md:rounded-[2.5rem] bg-white/95 shadow-[0_15px_50px_-10px_rgba(0,0,0,0.15)] lg:backdrop-blur-xl backdrop-blur-sm py-3 px-6 md:px-8 border border-gray-100' 
+            ? 'max-w-[1800px] rounded-full md:rounded-[2.5rem] lg:bg-white/95 bg-white lg:shadow-[0_15px_50px_-10px_rgba(0,0,0,0.15)] shadow-md lg:backdrop-blur-xl py-3 px-6 md:px-8 border border-gray-100' 
             : `max-w-full rounded-none py-3 md:py-4 px-6 md:px-10 border-b ${isTransparentHero ? 'bg-transparent border-transparent' : 'bg-white border-gray-100 shadow-sm'}`
           }`}
       >
