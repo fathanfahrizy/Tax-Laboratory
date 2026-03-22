@@ -124,7 +124,7 @@ export default function Home() {
               >
                 
                 {/* FIX: aspect-video diganti h-[260px] di HP biar foto lega & proporsional */}
-                <div className="w-full h-[260px] sm:h-[350px] lg:h-auto lg:aspect-video rounded-[1.8rem] overflow-hidden relative shadow-inner">
+                <div className="w-full h-[190px] sm:h-[350px] lg:h-auto lg:aspect-video rounded-[1.8rem] overflow-hidden relative shadow-inner">
                     <img 
                       src="/img-team/foto-taxlab.webp" 
                       alt="Suasana Praktikum di TaxLaboratorium" 
