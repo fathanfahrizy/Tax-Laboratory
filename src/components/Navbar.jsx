@@ -76,9 +76,9 @@ export default function Navbar() {
   };
 
   return (
-    <div className={`fixed w-full z-[100] flex justify-center pointer-events-none transition-all duration-300 ease-out ${isScrolled ? 'top-4 px-4 sm:px-6' : 'top-0 px-0'}`}>
+    <div className={`fixed w-full z-[100] flex justify-center pointer-events-none lg:transition-all transition-[padding,top] duration-300 ease-out ${isScrolled ? 'top-4 px-4 sm:px-6' : 'top-0 px-0'}`}>
       <nav 
-        className={`pointer-events-auto w-full transition-all duration-300 ease-out flex flex-col items-center relative transform-gpu
+        className={`pointer-events-auto w-full lg:transition-all transition-[background-color,border-radius,box-shadow,padding,max-width,border-color] duration-300 ease-out flex flex-col items-center relative transform-gpu
           ${isScrolled 
             ? 'max-w-[1800px] rounded-full md:rounded-[2.5rem] bg-white/95 shadow-[0_15px_50px_-10px_rgba(0,0,0,0.15)] backdrop-blur-xl py-3 px-6 md:px-8 border border-gray-100' 
             : `max-w-full rounded-none py-3 md:py-4 px-6 md:px-10 border-b ${isTransparentHero ? 'bg-transparent border-transparent' : 'bg-white border-gray-100 shadow-sm'}`
