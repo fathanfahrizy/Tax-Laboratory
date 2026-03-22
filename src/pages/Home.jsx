@@ -123,8 +123,8 @@ export default function Home() {
                 onClick={() => setIsModalOpen(true)}
               >
                 
-                {/* FIX: aspect-video diganti h-[260px] di HP biar foto lega & proporsional */}
-                <div className="w-full h-[190px] sm:h-[350px] lg:h-auto lg:aspect-video rounded-[1.8rem] overflow-hidden relative shadow-inner">
+                {/* FIX: Pakai aspect-[4/3] murni biar bentuknya proporsional (nggak gepeng) dan hapus semua animasi zoom di HP */}
+                <div className="w-full aspect-[4/2] lg:aspect-[16/9] rounded-[1.8rem] overflow-hidden relative shadow-inner">
                     <img 
                       src="/img-team/foto-taxlab.webp" 
                       alt="Suasana Praktikum di TaxLaboratorium" 
