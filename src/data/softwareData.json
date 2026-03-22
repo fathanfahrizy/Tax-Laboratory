@@ -4,9 +4,9 @@
     "name": "Adobe Acrobat Reader",
     "icon": "/img-template/Adobe.webp",
     "version": "LATEST DC",
-    "os": "Windows / Mac",
-    "desc": "Perangkat lunak esensial yang wajib diinstal untuk membuka, membaca, dan mencetak dokumen modul praktikum serta formulir perpajakan berformat PDF.",
-    "linkDrive": "https://drive.google.com/file/d/1FNV7g8oisx1D6eWMGywWY1RxvzCPhzL-/view",
+    "os": "WINDOWS / MAC",
+    "desc": "Perangkat lunak pendukung wajib untuk membuka, membaca, dan mencetak dokumen modul praktikum serta formulir perpajakan berformat PDF.",
+    "linkDrive": "https://drive.google.com/file/d/1DB_kSroTugr-xYBjc9Q1Pzau7eh428QN/view",
     "theme": { 
       "bg": "bg-red-50", 
       "border": "border-red-100", 
@@ -18,10 +18,11 @@
     "id": "efaktur",
     "name": "Aplikasi e-Faktur",
     "icon": "/img-template/E-Faktur.webp",
-    "version": "V.3.2.0.0",
-    "os": "Windows 64-bit + Java JRE",
-    "desc": "Aplikasi resmi dari Direktorat Jenderal Pajak (DJP) yang digunakan untuk membuat dan melaporkan Faktur Pajak Elektronik secara terkomputerisasi.",
-    "linkDrive": "https://drive.google.com/file/d/1aTxVnEJFWMgNcS_ZgH85MER_GrIrykhk/view",
+    "version": "V. 3.2.0.0",
+    "os": "WINDOWS 64-BIT + JRE",
+    "desc": "Aplikasi resmi DJP yang digunakan untuk mengelola, membuat, dan melaporkan Faktur Pajak Elektronik secara terkomputerisasi.",
+    "linkDrive": "https://drive.google.com/file/d/1vmz0HDG1h3YNDJb4QD4ETgTIdGYZNCGY/view",
+    "guideLink": "/files/Langkah Download E-faktur.pdf",
     "theme": { 
       "bg": "bg-purple-50", 
       "border": "border-purple-200", 
@@ -31,18 +32,47 @@
   },
   {
     "id": "espt",
-    "name": "e-SPT PPh Psl 21/26",
-    "icon": "/img-template/E-SPT.webp",
-    "version": "V.2.4.0.0",
-    "os": "Windows 10 / 11",
-    "desc": "Aplikasi desktop untuk mempermudah Wajib Pajak dalam menghitung, mengisi, dan melaporkan Surat Pemberitahuan (SPT) Masa Pajak Penghasilan Pasal 21/26.",
-    "linkDrive": "https://drive.google.com/drive/folders/1xnQDeXlWi0X2y9bZrc3rbD6HSNw2Zdf1",
-    "guideLink": "/files/Langkah Download E-faktur.pdf",
+    "name": "SPT 1770S (Excel)",
+    "icon": "/img-template/Excel.webp",
+    "version": "TEMPLATE",
+    "os": "MS. EXCEL",
+    "desc": "Template dokumen berbasis Microsoft Excel untuk mempermudah perhitungan, pengisian, dan pelaporan Surat Pemberitahuan (SPT) Tahunan PPh Orang Pribadi secara manual.",
+    "linkDrive": "https://docs.google.com/spreadsheets/d/1PtEXHzpJUDBumW-rUtsBWFnTTHaJT6j4/edit?usp=sharing&ouid=112224356439213616352&rtpof=true&sd=true",
     "theme": { 
       "bg": "bg-orange-50", 
       "border": "border-orange-200", 
       "text": "text-orange-600", 
       "shadow": "shadow-orange-900/5" 
+    }
+  },
+  {
+    "id": "faktur-pajak-excel",
+    "name": "Faktur Pajak (Excel)",
+    "icon": "/img-template/Excel.webp",
+    "version": "TEMPLATE",
+    "os": "MS. EXCEL",
+    "desc": "Template dokumen berbasis Microsoft Excel untuk mempermudah simulasi perekapan data, pembuatan draf Faktur Pajak, hingga penerbitan Nota Retur transaksi secara manual.",
+    "linkDrive": "https://docs.google.com/spreadsheets/d/1Jk-ar1n3qLP-MQ7QhShUIk2UsRjkBBlO/edit?usp=sharing&ouid=112224356439213616352&rtpof=true&sd=true",
+    "theme": { 
+      "bg": "bg-emerald-50", 
+      "border": "border-emerald-200", 
+      "text": "text-emerald-700", 
+      "shadow": "shadow-emerald-900/5" 
+    }
+  },
+  {
+    "id": "kalkulator-pajak",
+    "name": "Kalkulator Pajak LAB",
+    "icon": "/img-template/LogoTaxLab.webp",
+    "version": "PORTABLE (.EXE)",
+    "os": "WINDOWS",
+    "desc": "Aplikasi portabel interaktif berbasis Windows untuk membantu simulasi, estimasi, dan perhitungan berbagai jenis pajak dengan proses yang lebih cepat dan presisi.",
+    "linkDrive": "https://drive.google.com/file/d/1HMaQ4w7zF9WT7zHSkSYfJ-P45aBbWxgP/view",
+    "theme": { 
+      "bg": "bg-cyan-50", 
+      "border": "border-cyan-200", 
+      "text": "text-cyan-700", 
+      "shadow": "shadow-cyan-900/5" 
     }
   }
 ]

@@ -81,7 +81,7 @@ export default function TataTertib() {
               <div className="flex flex-col gap-1.5">
                 <span className="font-bold uppercase tracking-widest text-amber-800 text-sm">Peringatan Tambahan</span>
                 <p className="text-amber-900 text-[15px] leading-relaxed">
-                  Tidak menggunakan perhiasan yang berlebihan (termasuk tindik) kecuali jam tangan. Bagi praktikan yang berambut panjang/gondrong <strong className="font-bold">wajib diikat</strong> selama praktikum berlangsung.
+                  Tidak menggunakan perhiasan yang berlebihan (termasuk tindik) kecuali jam tangan. Bagi praktikan yang berambut panjang/gondrong <strong className="font-bold">wajib diikat</strong> selama praktikum berlangsung dan juga Segala bentuk kehilangan barang pribadi<strong> bukan menjadi tanggung jawab </strong> Laboratorium Akuntansi Lanjut B.
                 </p>
               </div>
             </div>

@@ -34,10 +34,15 @@ export default function SoftwarePajak() {
             </p>
           </header>
 
-          {/* GRID KARTU SOFTWARE */}
-          <section aria-label="Daftar Aplikasi Perpajakan" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* GRID KARTU SOFTWARE - Diperbarui menggunakan Flexbox Center */}
+          <section aria-label="Daftar Aplikasi Perpajakan" className="flex flex-wrap justify-center gap-8">
             {softwareData.map((app) => (
-              <SoftwareCard key={app.id} app={app} />
+              <div 
+                key={app.id} 
+                className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] flex [&>article]:h-full [&>article]:w-full"
+              >
+                <SoftwareCard app={app} />
+              </div>
             ))}
           </section>
 

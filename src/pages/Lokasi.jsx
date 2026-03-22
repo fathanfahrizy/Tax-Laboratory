@@ -103,9 +103,10 @@ export default function Lokasi() {
           <div className="bg-white rounded-[2rem] shadow-2xl border border-slate-200 overflow-hidden flex flex-col lg:flex-row h-auto lg:h-[75vh]">
             
             {/* KOLOM KIRI: SEARCH & LIST */}
-            <div className="w-full lg:w-[35%] flex flex-col border-b lg:border-b-0 lg:border-r border-slate-200 bg-white z-10">
+            {/* FIX: Border ditebelin jadi 8px (border-b-[8px]) dan z-index dinaikin biar shadow-nya jatuh ke atas map */}
+            <div className="w-full lg:w-[35%] flex flex-col border-b-[8px] lg:border-b-0 lg:border-r-[8px] border-orange-500 bg-white z-20 h-[450px] lg:h-full shadow-[0_15px_30px_-5px_rgba(0,0,0,0.3)]">
               
-              <div className="p-6 border-b border-slate-100 bg-white">
+              <div className="p-6 border-b border-slate-100 bg-white relative z-20 shadow-sm">
                 <div className="relative flex items-center bg-slate-50 rounded-xl border border-transparent focus-within:border-slate-200 focus-within:bg-white transition-all">
                   <input 
                     type="text" 
@@ -120,7 +121,7 @@ export default function Lokasi() {
                 </div>
               </div>
 
-              <div className="flex-1 overflow-y-auto custom-scrollbar p-2">
+              <div className="flex-1 overflow-y-auto custom-scrollbar p-2 bg-slate-50/50">
                 {filteredLocations.length > 0 ? (
                   filteredLocations.map((loc) => {
                     const liveStatus = getLiveStatus(loc.hours); // Hitung Live Status di sini
@@ -129,8 +130,8 @@ export default function Lokasi() {
                       <div 
                         key={loc.id} 
                         onClick={() => setActiveLocation(loc)}
-                        className={`p-6 cursor-pointer border-b border-slate-100 last:border-0 transition-all duration-300 relative group
-                          ${activeLocation.id === loc.id ? 'bg-slate-50' : 'hover:bg-slate-50/50'}
+                        className={`p-6 cursor-pointer border-b border-slate-200/50 last:border-0 transition-all duration-300 relative group
+                          ${activeLocation.id === loc.id ? 'bg-white shadow-sm z-10' : 'hover:bg-white/50'}
                         `}
                       >
                         <div className={`absolute left-0 top-0 bottom-0 w-1 transition-all duration-300

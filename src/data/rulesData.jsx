@@ -17,7 +17,7 @@ export const KETERLAMBATAN_ABSENSI = [
 ];
 
 export const PINDAH_SHIFT = [
-  <>Pindah Shift sementara dilakukan pada minggu bersangkutan, hanya diberikan <span className="font-bold text-slate-900">2 kali kesempatan</span>. Tidak berlaku pada minggu ujian.</>,
+  <>Pindah Shift sementara dilakukan pada minggu bersangkutan, diberikan maksimal <span className="font-bold text-slate-900">2 kali kesempatan</span> (Region Depok, Kalimalang, dan Salemba) dan <span className="font-bold text-slate-900">1 kali kesempatan</span> (Region Karawaci dan Cengkareng). Tidak berlaku pada minggu ujian.</>,
   <>Pindah shift tetap dilakukan pada minggu dimulainya pindah shift sampai ujian. Hanya diberikan <span className="font-bold text-slate-900">1 kali kesempatan</span> dan sifatnya permanen.</>,
   <>Wajib menghubungi KP kelas maksimal <span className="font-bold text-slate-900">3 hari sebelum praktikum</span> dengan memberikan alasan serta bukti yang jelas.</>
 ];

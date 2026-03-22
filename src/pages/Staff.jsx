@@ -14,33 +14,37 @@ export default function Staff() {
   return (
     <PageTransition>
     {/* Menggunakan tag <main> untuk menaikkan skor SEO Semantic */}
-    <main className="min-h-screen font-sans text-slate-800 pb-32 relative">
+    <main className="min-h-screen font-sans text-slate-800 pb-32 relative bg-[#fafafa]">
       
-      {/* === BACKGROUND DOTS === */}
-      <div className="fixed inset-0 -z-10 h-full w-full bg-[#fafafa] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-70 pointer-events-none"></div>
+      {/* === BACKGROUND KLASIK === */}
+      {/* Background polos dengan pattern halus yang tidak mengganggu */}
+      <div className="fixed inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
       {/* =========================================
-          1. HEADER STAFF (SEO OPTIMIZED)
+          1. HEADER STAFF (FORMAL & ELEGANT)
       ========================================= */}
       <section className="pt-36 md:pt-48 pb-16 relative px-6 max-w-4xl mx-auto text-center">
-        {/* SEO H1 dengan penempatan Keyword target */}
-        <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
-          Pimpinan <span className="text-slate-500 font-light">Laboratorium Pajak</span>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-6">
+          Pimpinan <span className="text-purple-900">Laboratorium Pajak</span>
         </h1>
-        {/* Paragraf semantik dengan keyword turunan */}
-        <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
-          Dibimbing oleh tenaga pendidik profesional dengan kepakaran di bidang perpajakan untuk memastikan kualitas kurikulum dan pelayanan <strong>Laboratorium Akuntansi Lanjut B</strong> (TaxLaboratorium) selalu berstandar tinggi.
+        <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed font-medium">
+          Dibimbing oleh tenaga pendidik profesional dengan kepakaran di bidang perpajakan untuk memastikan kualitas kurikulum dan pelayanan <strong>Laboratorium Akuntansi Lanjut B</strong> selalu berstandar tinggi.
         </p>
-        <div className="w-20 h-1 bg-slate-300 mx-auto mt-10 rounded-full"></div>
+        {/* Garis Pembatas Klasik */}
+        <div className="flex justify-center items-center gap-2 mt-10">
+          <div className="w-12 h-[2px] bg-slate-300"></div>
+          <div className="w-3 h-3 rounded-full bg-orange-500"></div>
+          <div className="w-12 h-[2px] bg-slate-300"></div>
+        </div>
       </section>
 
       {/* =========================================
-          2. CARDS SECTION (LOOPING DARI DATA EXTERNAL)
+          2. CARDS SECTION (3 KOLOM DI DESKTOP)
       ========================================= */}
-      <section aria-label="Daftar Staff dan Dosen Laboratorium" className="max-w-5xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+      {/* max-w-7xl agar 3 kartu bisa sejajar rapi di PC, dan turun jadi 1 kolom di HP */}
+      <section aria-label="Daftar Staff dan Dosen Laboratorium" className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           
-          {/* Mapping komponen kartu untuk memisahkan beban rendering */}
           {STAFF_DATA.map((staff, index) => (
             <StaffCard key={`staff-${index}`} staff={staff} />
           ))}
