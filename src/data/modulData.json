@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "EA_Modul Komputerisasi Perpajakan ATA 2025_2026",
-    "description": "Panduan praktikum PPh Pasal 21, 22, 23, 26, dan Pasal 4 ayat (2) beserta simulasi e-Bupot.",
+    "description": "Modul praktikum yang membahas secara komprehensif Pajak Penghasilan (Umum, Pasal 21 hingga 26, Final), e-Filing, SPT, Bea Meterai, BPHTB, PBB, PPN & PPnBM, Faktur Pajak, serta pengenalan Coretax.",
     "pages": 164,
     "link": "/files/EA_Modul Komputerisasi Perpajakan ATA 2025_2026.pdf",
     "classCode": "3EA"
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "title": "EB_Modul Akuntansi Perpajakan ATA 2025_2026",
-    "description": "Materi panduan teknis perhitungan dan pelaporan Pajak Penghasilan untuk kelas 3EB.",
+    "description": "Panduan praktikum yang membahas konsep dasar akuntansi pajak, perlakuan akuntansi untuk aktiva tetap, persediaan, utang pajak, pendapatan dan biaya, penyusunan Laporan Keuangan Fiskal, serta kasus pengisian SPT Tahunan Badan 1771.",
     "pages": 60,
     "link": "/files/EB_Modul Akuntansi Perpajakan ATA 2025_2026.pdf",
     "classCode": "3EB"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "title": "DA - Modul Komputerisasi Perpajakan 1 PTA 2024-2025",
-    "description": "Tata cara penerbitan Faktur Pajak dan pelaporan Pajak Pertambahan Nilai menggunakan e-Faktur.",
+    "description": "Modul praktikum yang berfokus pada materi Bea Meterai, Bea Perolehan Hak atas Tanah dan Bangunan (BPHTB), Pajak Bumi dan Bangunan (PBB), PPN & PPnBM, tata cara penerbitan Faktur Pajak, dan pengenalan Coretax.",
     "pages": 58,
     "link": "/files/DA_Modul Komputerisasi Perpajakan ATA 2025_2026.pdf",
     "classCode": "3DA"
