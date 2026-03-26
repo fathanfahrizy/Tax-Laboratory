@@ -17,26 +17,10 @@
   },
   {
     "id": 3,
-    "title": "DF - Modul Perpajakan PTA 2024-2025",
-    "description": "Pembahasan komprehensif mengenai rekonsiliasi fiskal dan pengisian SPT Tahunan.",
-    "pages": 96,
-    "link": "/files/DF - Modul Perpajakan PTA 2024-2025.pdf",
-    "classCode": "3DF"
-  },
-  {
-    "id": 4,
     "title": "DA - Modul Komputerisasi Perpajakan 1 PTA 2024-2025",
     "description": "Tata cara penerbitan Faktur Pajak dan pelaporan Pajak Pertambahan Nilai menggunakan e-Faktur.",
     "pages": 58,
     "link": "/files/DA_Modul Komputerisasi Perpajakan ATA 2025_2026.pdf",
     "classCode": "3DA"
-  },
-  {
-    "id": 5,
-    "title": "Modul Praktikum Perpajakan (EC)_PTA 2025-2026",
-    "description": "Panduan praktikum PPh Pasal 21, 22, 23, 26, dan Pasal 4 ayat (2) beserta simulasi e-Bupot.",
-    "pages": 163,
-    "link": "/files/Modul Praktikum Perpajakan (EC)_PTA 2025-2026.pdf",
-    "classCode": "4EC"
   }
 ]
