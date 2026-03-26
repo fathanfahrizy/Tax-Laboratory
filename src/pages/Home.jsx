@@ -197,7 +197,7 @@ export default function Home() {
             {isOprecOpen && (
               <ScrollReveal delay={150} className="h-full flex flex-col">
                 <div className="bg-orange-50 rounded-xl p-8 border border-orange-100 flex-grow flex flex-col justify-center hover:border-orange-300 transition-colors shadow-sm">
-                  <span className="bg-orange-500 text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4 w-max">Rekrutmen Buka</span>
+                  <span className="bg-orange-500 text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4 w-max">Rekrutmen Belum di Buka</span>
                   <h3 className="text-2xl font-black text-gray-900 mb-3">Oprec Asisten Lab</h3>
                   <p className="text-gray-600 mb-6">Pendaftaran asisten angkatan 2026 telah dibuka. Persiapkan dirimu untuk bergabung bersama Lab Akuntansi Pajak.</p>
                   <Link to="/oprec" className="bg-orange-500 text-white font-bold px-6 py-3 rounded-lg text-center hover:bg-orange-600 transition-colors shadow-sm">
