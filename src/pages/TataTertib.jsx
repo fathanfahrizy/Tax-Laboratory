@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import PageTransition from '../components/PageTransition';
+import { Helmet } from 'react-helmet-async';
 
 // IMPORT DATA & KOMPONEN EXTERNAL (PERFORMANCE BOOST)
 import { KETENTUAN_UMUM, KETERLAMBATAN_ABSENSI, PINDAH_SHIFT } from '../data/rulesData';
@@ -12,6 +13,11 @@ export default function TataTertib() {
 
   return (
     <PageTransition>
+      <Helmet>
+        <title>Tata Tertib Praktikum - Laboratorium Pajak Gunadarma</title>
+        <meta name="description" content="Aturan berpakaian, ketentuan keterlambatan, absensi, dan tata tertib resmi pelaksanaan praktikum di Laboratorium Akuntansi Lanjut B (TaxLaboratory)." />
+        <link rel="canonical" href="https://www.taxlaboratory.my.id/tata-tertib" />
+      </Helmet>
     {/* SEMANTIC HTML: Menggunakan <main> untuk SEO */}
     <main className="pt-32 pb-32 min-h-screen bg-[#fafafa] font-sans text-slate-800">
       <div className="max-w-4xl mx-auto px-6">

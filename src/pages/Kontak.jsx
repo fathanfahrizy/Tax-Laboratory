@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import PageTransition from '../components/PageTransition';
+import { Helmet } from 'react-helmet-async';
 
 // IMPORT KOMPONEN DARI LUAR (Meringankan Render)
 import { EmailIcon, InstagramIcon } from '../components/ContactIcons';
@@ -12,6 +13,11 @@ export default function Kontak() {
 
   return (
     <PageTransition>
+      <Helmet>
+        <title>Hubungi Kami - Kontak TaxLaboratory Gunadarma</title>
+        <meta name="description" content="Punya pertanyaan seputar praktikum? Hubungi tim Laboratorium Akuntansi Lanjut B melalui email resmi atau media sosial Instagram TaxLaboratory." />
+        <link rel="canonical" href="https://www.taxlaboratory.my.id/kontak" />
+      </Helmet>
     {/* SEMANTIC HTML: Menggunakan <main> untuk menaikkan skor SEO */}
     <main className="pt-32 pb-32 min-h-screen bg-[#fafafa] font-sans text-slate-800 relative overflow-hidden">
       

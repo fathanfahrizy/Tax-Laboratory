@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { createPortal } from 'react-dom';
 import PageTransition from '../components/PageTransition';
+import { Helmet } from 'react-helmet-async';
 
 // IMPORT DATA DAN KOMPONEN DARI LUAR FILE!
 import { ARTICLES_DATA } from '../data/articlesData';
@@ -77,6 +78,27 @@ export default function Home() {
 
   return (
     <PageTransition>
+    {/* --- INJEKSI SEO & SCHEMA MARKUP --- */}
+    <Helmet>
+      <title>TaxLaboratory - Laboratorium Akuntansi Lanjut B Gunadarma</title>
+      <meta name="description" content="Pusat praktikum Laboratorium Pajak terpadu. Solusi cerdas pendalaman teori menuju implementasi Lab Akuntansi Pajak berstandar industri modern di Universitas Gunadarma." />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          "name": "TaxLaboratory - Laboratorium Akuntansi Lanjut B",
+          "alternateName": ["Lab Pajak Gunadarma", "Lab Akuntansi Gunadarma", "Taxlab"],
+          "url": "https://www.taxlaboratory.my.id/",
+          "logo": "https://www.taxlaboratory.my.id/img-template/LogoTaxLab.webp",
+          "parentOrganization": {
+            "@type": "CollegeOrUniversity",
+            "name": "Universitas Gunadarma",
+            "url": "https://gunadarma.ac.id/"
+          }
+        })}
+      </script>
+    </Helmet>
+
     <main className="bg-[#fafafa] font-sans text-gray-800 scroll-smooth relative z-0">
       
       {/* === BACKGROUND DOTS === */}
@@ -184,8 +206,9 @@ export default function Home() {
           <ScrollReveal className="lg:col-span-8">
             <div className="bg-white rounded-xl p-10 lg:p-14 border border-gray-100 shadow-sm flex flex-col justify-center hover:border-purple-300 transition-colors h-full">
               <h3 className="text-3xl md:text-4xl font-black text-purple-900 mb-6">Pusat Studi & Praktik Pajak Terpadu</h3>
+              {/* FIX: Injeksi keyword "Lab akuntansi gunadarma" secara natural */}
               <p className="text-gray-600 text-lg mb-8 leading-relaxed text-justify">
-                <strong>Laboratorium Akuntansi Lanjut B</strong> berdedikasi untuk menjembatani kesenjangan antara teori akademis dan kebutuhan industri perpajakan. Kami memfasilitasi mahasiswa dengan simulasi pelaporan pajak riil.
+                Sebagai pusat pembelajaran yang unggul, <strong>Lab akuntansi gunadarma</strong> terus berkomitmen untuk menjembatani kesenjangan antara teori akademis dan kebutuhan industri perpajakan. Kami memfasilitasi mahasiswa dengan simulasi pelaporan pajak riil di <strong>Laboratorium Akuntansi Lanjut B</strong>.
               </p>
               <Link to="/tentang-kami" className="text-orange-500 font-bold hover:text-orange-600 flex items-center gap-2 w-max border-b-2 border-orange-500 pb-1" aria-label="Baca Sejarah Laboratorium Pajak">
                 Baca Sejarah & Visi Misi Lengkap <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>

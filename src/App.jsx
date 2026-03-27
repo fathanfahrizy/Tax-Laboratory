@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async'; // <-- IMPORT INI
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop'; // <-- Import komponen ScrollToTop
+import ScrollToTop from './components/ScrollToTop';
 
 // Import Halaman
 import Home from './pages/Home';
@@ -19,27 +20,28 @@ import Kontak from './pages/Kontak';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      {/* ScrollToTop ditaruh di sini biar setiap pindah route, layar otomatis ke atas */}
-      <ScrollToTop />
-      
-      <div className="bg-[#fafafa] min-h-screen font-sans text-gray-800 scroll-smooth">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/oprec" element={<Oprec />} />
-          <Route path="/tentang-kami" element={<TentangKami />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/staff" element={<Staff />} />
-          <Route path="/tata-tertib" element={<TataTertib />} />
-          <Route path="/modul" element={<Modul />} />
-          <Route path="/software-pajak" element={<SoftwarePajak />} />
-          <Route path="/lokasi" element={<Lokasi />} />
-          <Route path="/faq" element={<Faq />} />
-          <Route path="/kontak" element={<Kontak />} />
-        </Routes>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    // BUNGKUS DENGAN HELMET PROVIDER DI SINI
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <div className="bg-[#fafafa] min-h-screen font-sans text-gray-800 scroll-smooth">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/oprec" element={<Oprec />} />
+            <Route path="/tentang-kami" element={<TentangKami />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/staff" element={<Staff />} />
+            <Route path="/tata-tertib" element={<TataTertib />} />
+            <Route path="/modul" element={<Modul />} />
+            <Route path="/software-pajak" element={<SoftwarePajak />} />
+            <Route path="/lokasi" element={<Lokasi />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/kontak" element={<Kontak />} />
+          </Routes>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }

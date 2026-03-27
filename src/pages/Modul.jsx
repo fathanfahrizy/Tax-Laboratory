@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo } from 'react';
 import modulData from '../data/modulData.json';
 import PageTransition from '../components/PageTransition';
+import { Helmet } from 'react-helmet-async';
 
 // IMPORT KOMPONEN DARI LUAR (Meringankan Render)
 import ModulCard from '../components/ModulCard';
@@ -27,6 +28,10 @@ export default function Modul() {
 
   return (
     <PageTransition>
+      <Helmet>
+        <title>Download Modul Pajak - Laboratorium Akuntansi Lanjut B</title>
+        <meta name="description" content="Pusat unduhan modul pembelajaran dan praktikum pajak resmi dari TaxLaboratorium Universitas Gunadarma." />
+      </Helmet>
     {/* SEMANTIC HTML: <main> untuk meningkatkan skor SEO */}
     <main className="pt-32 pb-32 min-h-screen bg-[#fafafa] font-sans text-slate-800">
       <div className="max-w-6xl mx-auto px-6">

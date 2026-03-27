@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import PageTransition from '../components/PageTransition';
 import { LOKASI_DATA } from '../data/lokasiData';
 import { SearchIcon, MapPinIcon, CloseIcon } from '../components/LokasiIcons';
+import { Helmet } from 'react-helmet-async';
 
 export default function Lokasi() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -86,6 +87,11 @@ export default function Lokasi() {
   return (
     <PageTransition>
     <>
+      <Helmet>
+        <title>Lokasi Lab Pajak - Kampus Universitas Gunadarma</title>
+        <meta name="description" content="Informasi lengkap lokasi, alamat, dan jam operasional Laboratorium Akuntansi Lanjut B (TaxLaboratory)." />
+      </Helmet>
+      
       <main className="pt-32 pb-24 min-h-screen bg-[#fafafa] font-sans text-slate-800 flex flex-col relative z-0">
         
         {/* HEADER TEXT (SEO OPTIMIZED) */}

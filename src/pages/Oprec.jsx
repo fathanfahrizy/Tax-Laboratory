@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import PageTransition from '../components/PageTransition';
+import { Helmet } from 'react-helmet-async';
 
 // IMPORT KOMPONEN & DATA EXTERNAL
 import { TIMELINE_DATA } from '../data/oprecData';
@@ -24,6 +25,11 @@ export default function Oprec() {
   return (
     <PageTransition>
     <>
+      <Helmet>
+        <title>Open Recruitment Asisten - Lab Akuntansi Lanjut B Gunadarma</title>
+        <meta name="description" content="Informasi pendaftaran, persyaratan, dan jadwal seleksi Open Recruitment Asisten dan IT Support Laboratorium Pajak (TaxLaboratory) Universitas Gunadarma." />
+        <link rel="canonical" href="https://www.taxlaboratory.my.id/oprec" />
+      </Helmet>
       <main className="bg-[#fafafa] font-sans text-slate-800 scroll-smooth relative z-0 min-h-screen overflow-x-hidden">
           
           {/* =========================================

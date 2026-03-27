@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import PageTransition from '../components/PageTransition';
+import { Helmet } from 'react-helmet-async';
 
 // === IMPORT DATA & KOMPONEN DARI LUAR (Meringankan Render File Utama) ===
 import softwareData from '../data/softwareData.json';
@@ -12,6 +13,11 @@ export default function SoftwarePajak() {
 
   return (
     <PageTransition>
+      <Helmet>
+        <title>Download Software Pajak (e-SPT & e-Faktur) - TaxLaboratory</title>
+        <meta name="description" content="Pusat unduhan aplikasi perangkat lunak perpajakan resmi (e-SPT, e-Faktur, Patch) untuk kegiatan praktikum di Laboratorium Akuntansi Lanjut B Gunadarma." />
+        <link rel="canonical" href="https://www.taxlaboratory.my.id/software-pajak" />
+      </Helmet>
       {/* SEMANTIC HTML: Menggunakan <main> untuk struktur SEO yang kuat */}
       <main className="pt-32 pb-32 min-h-screen bg-[#fafafa] font-sans text-slate-800">
         <div className="max-w-6xl mx-auto px-6">

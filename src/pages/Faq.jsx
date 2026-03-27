@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import PageTransition from '../components/PageTransition';
+import { Helmet } from 'react-helmet-async'; // <-- IMPORT HELMET DITAMBAHKAN DI SINI
 
 // IMPORT DATA & KOMPONEN EXTERNAL 
 import { FAQS_DATA } from '../data/faqData';
 import { FaqItem } from '../components/FaqComponents';
+import { Link } from 'react-router-dom';
 
 export default function Faq() {
   // active di-set ke index yang sedang dibuka. null = tutup semua.
@@ -20,6 +22,29 @@ export default function Faq() {
 
   return (
     <PageTransition>
+    {/* --- INJEKSI SEO & FAQ SCHEMA MARKUP --- */}
+    <Helmet>
+      <title>FAQ Praktikum - Laboratorium Pajak Gunadarma</title>
+      <meta name="description" content="Temukan jawaban cepat untuk pertanyaan umum seputar kegiatan praktikum dan aturan di Laboratorium Akuntansi Lanjut B (TaxLaboratorium) Universitas Gunadarma." />
+      <link rel="canonical" href="https://www.taxlaboratory.my.id/faq" />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": FAQS_DATA.map((faq) => ({
+            "@type": "Question",
+            // NOTE: Pastikan 'faq.question' dan 'faq.answer' sesuai dengan nama properti di file faqData kamu.
+            // Kalau di file kamu namanya 'q' dan 'a', maka otomatis terbaca berkat operator || di bawah ini.
+            "name": faq.question || faq.q || "Pertanyaan Praktikum", 
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer || faq.a || "Jawaban dari TaxLaboratory"
+            }
+          }))
+        })}
+      </script>
+    </Helmet>
+
     {/* SEMANTIC HTML: Menggunakan <main> untuk performa SEO */}
     <main className="pt-32 pb-32 min-h-screen bg-[#fafafa] font-sans text-slate-800 relative overflow-hidden">
       
@@ -56,9 +81,9 @@ export default function Faq() {
         <footer className="mt-16 text-center">
           <p className="text-slate-500 font-medium">
             Tidak menemukan jawaban yang Anda cari? <br className="md:hidden" />
-            <a href="/kontak" className="text-orange-500 font-bold hover:text-orange-600 underline decoration-2 underline-offset-4 transition-colors ml-1">
+            <Link to="/kontak" className="text-orange-500 font-bold hover:text-orange-600 underline decoration-2 underline-offset-4 transition-colors ml-1">
               Hubungi Staff Laboratorium
-            </a>
+            </Link>
           </p>
         </footer>
 

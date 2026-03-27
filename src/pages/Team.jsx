@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import teamData from '../data/teamData.json';
 import PageTransition from '../components/PageTransition';
+import { Helmet } from 'react-helmet-async';
 
 // IMPORT KOMPONEN KARTU
 import MemberCard from '../components/MemberCard';
@@ -30,6 +31,11 @@ export default function Team() {
 
   return (
     <PageTransition>
+      <Helmet>
+        <title>Tim Asisten & IT Support - TaxLaboratory Gunadarma</title>
+        <meta name="description" content="Kenali profil anggota Asisten Praktikum dan tim IT Support yang berdedikasi di Laboratorium Akuntansi Lanjut B (TaxLaboratory) Universitas Gunadarma." />
+        <link rel="canonical" href="https://www.taxlaboratory.my.id/team" />
+      </Helmet>
     <main className="bg-[#fafafa] min-h-screen font-sans text-gray-800 scroll-smooth pb-32">
       
       <div className="fixed inset-0 -z-10 h-full w-full bg-[#fafafa] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-70 pointer-events-none"></div>

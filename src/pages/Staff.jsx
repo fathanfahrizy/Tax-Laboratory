@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import PageTransition from '../components/PageTransition';
+import { Helmet } from 'react-helmet-async';
 
 // IMPORT DATA & KOMPONEN EKSTERNAL (PERFORMANCE BOOST)
 import { STAFF_DATA } from '../data/staffData';
@@ -13,6 +14,11 @@ export default function Staff() {
 
   return (
     <PageTransition>
+      <Helmet>
+        <title>Staff & Pimpinan Laboratorium Pajak - Universitas Gunadarma</title>
+        <meta name="description" content="Profil staff, tenaga pendidik, dan pimpinan Laboratorium Akuntansi Lanjut B (TaxLaboratory) Universitas Gunadarma yang memiliki kepakaran di bidang perpajakan." />
+        <link rel="canonical" href="https://www.taxlaboratory.my.id/staff" />
+      </Helmet>
     {/* Menggunakan tag <main> untuk menaikkan skor SEO Semantic */}
     <main className="min-h-screen font-sans text-slate-800 pb-32 relative bg-[#fafafa]">
       

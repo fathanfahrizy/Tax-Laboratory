@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import PageTransition from '../components/PageTransition';
+import { Helmet } from 'react-helmet-async';
 
 // Mengimpor data statis dari luar untuk mencegah re-render & meringankan ukuran file
 import { VISI_DATA, MISI_DATA } from '../data/misiData';
@@ -128,6 +129,11 @@ export default function TentangKami() {
 
   return (
     <PageTransition>
+      <Helmet>
+        <title>Tentang Kami - Profil TaxLaboratory Gunadarma</title>
+        <meta name="description" content="Sejarah, visi, misi, dan profil lengkap Laboratorium Akuntansi Lanjut B (TaxLaboratory) sebagai pusat pembelajaran perpajakan di Universitas Gunadarma." />
+        <link rel="canonical" href="https://www.taxlaboratory.my.id/tentang-kami" />
+      </Helmet>
     <main className="bg-[#fafafa] min-h-screen font-sans text-gray-800 scroll-smooth overflow-hidden pb-32">
       
       <div className="fixed inset-0 -z-10 h-full w-full bg-[#fafafa] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-70"></div>
