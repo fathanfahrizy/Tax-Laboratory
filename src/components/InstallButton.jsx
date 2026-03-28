@@ -82,7 +82,11 @@ export default function InstallButton() {
             >
               ✕
             </button>
-            <div className="text-5xl mb-4">🍎</div>
+              <img 
+                src="/img-template/logo-apple.webp" 
+                alt="Apple Logo" 
+                className="w-16 h-16 mx-auto mb-4 object-contain" 
+              />
             <h3 className="text-xl font-extrabold text-purple-900 mb-2">Cara Install di iPhone</h3>
             <p className="text-gray-600 mb-6 text-sm">
               Sistem Apple mewajibkan instalasi secara manual. Ikuti 2 langkah mudah ini:
