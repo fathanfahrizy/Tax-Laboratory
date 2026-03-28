@@ -22,7 +22,7 @@ export const FAQS_DATA = [
   },
   { 
     q: "Bagaimana aturan pakaian saat praktikum berlangsung?", 
-    a: "Praktikan diwajibkan menggunakan kemeja berkerah atau batik (dimasukkan), celana/rok bahan kain warna hitam, dan menggunakan sepatu tertutup. Bahan kaos, jeans, dan celana kargo sangat dilarang." 
+    a: "Seluruh praktikan diwajibkan mengenakan kemeja berkerah atau batik dengan ketentuan pakaian wajib dimasukkan ke dalam bawahan (berlaku bagi pria maupun wanita), menggunakan celana atau rok berbahan kain warna hitam, serta memakai sepatu tertutup; khusus bagi praktikan wanita yang berhijab, wajib menggunakan kerudung segi empat, serta dilarang keras menggunakan pakaian berbahan kaos, jeans, maupun celana kargo selama kegiatan praktikum berlangsung." 
   },
   { 
     q: "Apa yang terjadi jika saya alfa (tanpa keterangan)?", 
