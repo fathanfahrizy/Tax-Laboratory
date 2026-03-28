@@ -184,7 +184,7 @@ export default function TentangKami() {
                   lg:bg-purple-900/10 lg:group-hover:bg-transparent
               `}></div>
               <img 
-                src="https://images.unsplash.com/photo-1577415124269-b911cff4074f?w=800&q=80" 
+                src="/img-team/foto-tentang-kami.webp" 
                 alt="Fasilitas Modern di Laboratorium Pajak Universitas Gunadarma" 
                 fetchpriority="high"
                 decoding="async"
