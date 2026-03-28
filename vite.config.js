@@ -12,7 +12,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg', 'logo-taxlab.webp'],
       workbox: {
-        navigateFallbackDenylist: [/^\/sitemap\.xml$/, /^\/robots\.txt$/]
+        navigateFallbackDenylist: [/^\/sitemap\.xml$/, /^\/robots\.txt$/,/^\/files\/.*/]
       },
       manifest: {
         name: 'TaxLaboratory Gunadarma',
