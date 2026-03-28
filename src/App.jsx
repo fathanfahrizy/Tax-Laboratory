@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react"; // Import Analytics Vercel
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import InstallButton from './components/InstallButton';
 
 // IMPORT HALAMAN DENGAN LAZY LOADING (Code Splitting)
 const Home = lazy(() => import('./pages/Home'));
@@ -21,6 +22,7 @@ const Lokasi = lazy(() => import('./pages/Lokasi'));
 const Faq = lazy(() => import('./pages/Faq'));
 const Kontak = lazy(() => import('./pages/Kontak'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+
 
 // Komponen Loading Sederhana saat transisi antar halaman
 const PageLoader = () => (
@@ -55,6 +57,7 @@ export default function App() {
             </Routes>
           </Suspense>
 
+          <InstallButton />
           <Footer />
           
           {/* Vercel Analytics terpasang otomatis di sini */}
