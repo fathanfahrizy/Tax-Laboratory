@@ -2,7 +2,7 @@
 export const FAQS_DATA = [
   { 
     q: "Apa ketentuan jilid modul praktikum?", 
-    a: "Modul praktikum wajib dijilid menggunakan Mika Bening di bagian depan dan Buffalo Merah di bagian belakang, serta dilakban hitam di bagian samping." 
+    a: "Modul praktikum wajib dijilid menggunakan Mika Bening di bagian depan dan Buffalo Merah di bagian belakang" 
   },
   { 
     q: "Kapan jadwal praktikum dimulai?", 
