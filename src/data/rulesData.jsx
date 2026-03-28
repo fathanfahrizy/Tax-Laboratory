@@ -17,7 +17,26 @@ export const KETERLAMBATAN_ABSENSI = [
 ];
 
 export const PINDAH_SHIFT = [
-  <>Pindah Shift sementara dilakukan pada minggu bersangkutan, diberikan maksimal <span className="font-bold text-slate-900">2 kali kesempatan</span> (Region Depok, Kalimalang, dan Salemba) dan <span className="font-bold text-slate-900">1 kali kesempatan</span> (Region Karawaci dan Cengkareng). Tidak berlaku pada minggu ujian.</>,
-  <>Pindah shift tetap dilakukan pada minggu dimulainya pindah shift sampai ujian. Hanya diberikan <span className="font-bold text-slate-900">1 kali kesempatan</span> dan sifatnya permanen.</>,
-  <>Wajib menghubungi KP kelas maksimal <span className="font-bold text-slate-900">3 hari sebelum praktikum</span> dengan memberikan alasan serta bukti yang jelas.</>
+  <>
+    Pindah Shift sementara dilakukan pada minggu yang bersangkutan.
+    <ul className="list-disc ml-5 mt-2 space-y-1 text-slate-600">
+      <li>Untuk region <span className="font-bold text-slate-900">Cengkareng dan Karawaci</span> hanya diberikan <span className="font-bold text-slate-900">1 kali kesempatan</span>.</li>
+      <li>Untuk region <span className="font-bold text-slate-900">Depok, Salemba, dan Kalimalang</span> diberikan <span className="font-bold text-slate-900">2 kali kesempatan</span>.</li>
+      <li>Pindah shift sementara <span className="font-bold text-slate-900">tidak berlaku pada minggu ujian</span>.</li>
+    </ul>
+  </>,
+  <>
+    Pindah shift tetap dilakukan pada minggu dimulainya pindah shift sampai ujian berlangsung. Pindah shift tetap hanya diberikan <span className="font-bold text-slate-900">1 kali kesempatan</span> dan sifatnya <span className="font-bold text-slate-900">permanen</span>.
+  </>,
+  <>
+    Bagi praktikan yang ingin pindah shift diwajibkan menghubungi KP kelas terkait maksimal <span className="font-bold text-slate-900">3 hari sebelum praktikum berlangsung</span> dengan memberikan alasan serta bukti yang jelas.
+  </>,
+  <>
+    Proses pindah shift harus memenuhi ketentuan berikut:
+    <ul className="list-disc ml-5 mt-2 space-y-1 text-slate-600">
+      <li>Mengisi form secara online melalui WA.</li>
+      <li>Mengisi form secara offline pada saat di kelas.</li>
+      <li>Mengisi dan menandatangani tabel form pindah shift sementara/tetap.</li>
+    </ul>
+  </>
 ];
