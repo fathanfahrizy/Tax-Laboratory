@@ -134,7 +134,10 @@ export default function TataTertib() {
               ))}
               
               <SpecialRuleItem letter="g">
-                Batas maksimal ketidakhadiran <span className="font-bold">2 kali</span>, jika pada ke-3 kalinya tetap tidak hadir maka praktikan akan di <span className="bg-rose-600 text-white font-black px-2 py-0.5 rounded text-sm tracking-wider mx-1 shadow-sm">DELETE</span> dari praktikum.
+                Batas maksimal ketidakhadiran <span className="font-bold">2 kali</span>, jika pada ke-3 kalinya tetap tidak hadir maka praktikan akan di <span className="bg-rose-600 text-white font-black px-2 py-0.5 rounded text-sm tracking-wider mx-1 shadow-sm">DELETE</span> dari praktikum bersangkutan (Region Depok, Kalimalang, dan Salemba).
+              </SpecialRuleItem>
+              <SpecialRuleItem letter="h">
+                Batas maksimal ketidakhadiran <span className="font-bold">1 kali</span>, jika pada ke-2 kalinya tetap tidak hadir maka praktikan akan di <span className="bg-rose-600 text-white font-black px-2 py-0.5 rounded text-sm tracking-wider mx-1 shadow-sm">DELETE</span> dari praktikum yang bersangkutan (Region Karawaci, dan Cengkareng).
               </SpecialRuleItem>
             </ul>
           </div>

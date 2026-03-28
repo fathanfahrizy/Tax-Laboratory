@@ -6,7 +6,7 @@ export const FAQS_DATA = [
   },
   { 
     q: "Kapan jadwal praktikum dimulai?", 
-    a: "Jadwal praktikum akan menyesuaikan dengan KRS masing-masing mahasiswa yang tertera di Studentsite. Pastikan Anda mengecek jadwal secara berkala." 
+    a: "Jadwal praktikum akan dilakukan setelah KP menghubungi perwakilan kelasnya masing-masing. Pastikan anda ikut bergabung kedalam grup praktikum kelas anda masing-masing untuk mengetahui kapan kegiatan praktikum dimulai." 
   },
   { 
     q: "Berapa lama batas toleransi keterlambatan?", 
