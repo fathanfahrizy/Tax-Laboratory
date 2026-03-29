@@ -78,7 +78,7 @@ export default function Footer() {
           <div className="flex flex-wrap justify-center gap-4 text-xs font-bold text-slate-400">
             <Link to="/tentang-kami" className="hover:text-slate-600 transition-colors">Tentang Kami</Link>
             <span className="hidden sm:inline">&bull;</span>
-            <Link to="/team" className="hover:text-slate-600 transition-colors">Daftar Asisten</Link>
+            <Link to="/team" className="hover:text-slate-600 transition-colors">Team</Link>
             <span className="hidden sm:inline">&bull;</span>
             <Link to="/lokasi" className="hover:text-slate-600 transition-colors">Lokasi Lab</Link>
           </div>

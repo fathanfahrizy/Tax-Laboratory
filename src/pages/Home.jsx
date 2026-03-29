@@ -81,13 +81,14 @@ export default function Home() {
     {/* --- INJEKSI SEO & SCHEMA MARKUP --- */}
     <Helmet>
       <title>TaxLaboratory - Laboratorium Akuntansi Lanjut B Gunadarma</title>
-      <meta name="description" content="Pusat praktikum Laboratorium Pajak terpadu. Solusi cerdas pendalaman teori menuju implementasi Lab Akuntansi Pajak berstandar industri modern di Universitas Gunadarma." />
+      <meta name="description" content="Pusat informasi dan unduhan modul TaxLaboratory (Tax Lab Gundar). Platform resmi Laboratorium Akuntansi Lanjut B Universitas Gunadarma untuk praktikum perpajakan." />
+      <meta name="keywords" content="tax laboratory, taxlaboratory, laboratorium akuntansi lanjut b, lab akuntansi lanjut b, tax lab gundar, lab pajak gunadarma" />
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "EducationalOrganization",
           "name": "TaxLaboratory - Laboratorium Akuntansi Lanjut B",
-          "alternateName": ["Lab Pajak Gunadarma", "Lab Akuntansi Gunadarma", "Taxlab"],
+          "alternateName": ["Lab Pajak Gunadarma", "Lab Akuntansi Gunadarma", "Taxlab", "Tax Lab Gundar", "Taxlaboratory"],
           "url": "https://www.taxlaboratory.my.id/",
           "logo": "https://www.taxlaboratory.my.id/img-template/LogoTaxLab.webp",
           "parentOrganization": {
