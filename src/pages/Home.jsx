@@ -126,7 +126,7 @@ export default function Home() {
               </p>
 
               <div className="hidden lg:flex flex-wrap items-center gap-4 animate-[fadeIn_0.9s_ease-out]">
-                <Link to="/modul" className="bg-orange-500 hover:bg-white hover:text-orange-600 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg transition-colors flex items-center gap-3 text-base" aria-label="Ambil Modul Praktikum Pajak">
+                <Link to="/modul" className="bg-orange-500 hover:bg-white hover:text-orange-600 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg transition-colors flex items-center gap-3 text-base" aria-label="Download Modul tax laboratory Laboratorium Akuntansi Lanjut B">
                   Ambil Modul <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                 </Link>
               </div>
@@ -150,7 +150,7 @@ export default function Home() {
                 <div className="w-full aspect-[4/2] lg:aspect-[16/9] rounded-[1.8rem] overflow-hidden relative shadow-inner">
                     <img 
                       src="/img-team/foto-taxlab.webp" 
-                      alt="Suasana Praktikum di TaxLaboratorium" 
+                      alt="Suasana Praktikum tax laboratory di Laboratorium Akuntansi Lanjut B (Tax Lab Gundar)" 
                       fetchpriority="high"
                       decoding="async"
                       className={`w-full h-full object-cover object-center transition-transform duration-700 ease-out transform-gpu
@@ -211,7 +211,7 @@ export default function Home() {
               <p className="text-gray-600 text-lg mb-8 leading-relaxed text-justify">
                 Sebagai pusat pembelajaran yang unggul, <strong>Lab akuntansi gunadarma</strong> terus berkomitmen untuk menjembatani kesenjangan antara teori akademis dan kebutuhan industri perpajakan. Kami memfasilitasi mahasiswa dengan simulasi pelaporan pajak riil di <strong>Laboratorium Akuntansi Lanjut B</strong>.
               </p>
-              <Link to="/tentang-kami" className="text-orange-500 font-bold hover:text-orange-600 flex items-center gap-2 w-max border-b-2 border-orange-500 pb-1" aria-label="Baca Sejarah Laboratorium Pajak">
+              <Link to="/tentang-kami" className="text-orange-500 font-bold hover:text-orange-600 flex items-center gap-2 w-max border-b-2 border-orange-500 pb-1" aria-label="Profil dan Sejarah Tax Lab Gundar">
                 Baca Sejarah & Visi Misi Lengkap <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
               </Link>
             </div>
@@ -260,7 +260,7 @@ export default function Home() {
                   </Link>
                 </div>
                 <figure className="lg:col-span-4 bg-slate-100 rounded-xl border border-gray-200 overflow-hidden h-64 lg:h-auto order-1 lg:order-2 shadow-sm">
-                  <img src="/img-template/TataTertib.webp" alt="Tata Tertib Praktikum Laboratorium Pajak" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                  <img src="/img-template/TataTertib.webp" alt="Aturan dan Tata Tertib Praktikum lab akuntansi lanjut b Universitas Gunadarma" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </figure>
               </article>
             </ScrollReveal>
@@ -294,7 +294,7 @@ export default function Home() {
                   </Link>
                 </div>
                 <figure className="lg:col-span-4 bg-slate-100 rounded-xl border border-gray-200 overflow-hidden h-64 lg:h-auto order-1 lg:order-2 shadow-sm">
-                  <img src="/img-template/Modul.webp" alt="Modul Praktikum TaxLaboratorium" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                  <img src="/img-template/Modul.webp" alt="Buku Modul Praktikum Tax Lab Gundar" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </figure>
               </article>
             </ScrollReveal>
@@ -319,7 +319,7 @@ export default function Home() {
                 </Link>
               </div>
               <figure className="md:w-1/2 w-full">
-                 <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Gedung Kampus Laboratorium" loading="lazy" decoding="async" className="w-full h-64 object-cover rounded-lg shadow-inner opacity-90" />
+                 <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Lokasi Gedung tax laboratory Laboratorium Akuntansi Lanjut B" loading="lazy" decoding="async" className="w-full h-64 object-cover rounded-lg shadow-inner opacity-90" />
               </figure>
             </div>
           </ScrollReveal>
@@ -369,7 +369,7 @@ export default function Home() {
           <div className="relative flex flex-col items-center justify-center w-full max-w-7xl animate-[fadeIn_0.2s_ease-out]">
             <img 
               src="/img-team/foto-taxlab.webp" 
-              alt="Suasana Laboratorium Akuntansi Lanjut B Full View" 
+              alt="Suasana Praktikum tax laboratory di Laboratorium Akuntansi Lanjut B (Tax Lab Gundar)" 
               loading="lazy"
               decoding="async"
               className="max-w-[90vw] max-h-[85vh] w-auto h-auto object-contain rounded-xl md:rounded-2xl shadow-2xl border border-white/10 cursor-default transform-gpu" 
