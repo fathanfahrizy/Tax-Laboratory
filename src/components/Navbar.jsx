@@ -132,7 +132,7 @@ export default function Navbar() {
                   <Link to="/tata-tertib" onClick={closeAll} className={`block px-6 py-3 ${getSubLinkStyle('/tata-tertib')}`}>Tata Tertib</Link>
                   <Link to="/modul" onClick={closeAll} className={`block px-6 py-3 ${getSubLinkStyle('/modul')}`}>Modul</Link>
                   <Link to="/software-pajak" onClick={closeAll} className={`block px-6 py-3 ${getSubLinkStyle('/software-pajak')}`}>Software Pajak</Link>
-                  <a href="https://www.pajak.go.id/" target="_blank" rel="noreferrer" onClick={closeAll} className="block px-6 py-3 text-blue-600 hover:bg-blue-50/80">Portal DJP</a>
+                  <a href="https://pajak.go.id/" target="_blank" rel="noreferrer" onClick={closeAll} className="block px-6 py-3 text-blue-600 hover:bg-blue-50/80">Portal DJP</a>
                 </div>
               )}
             </div>
