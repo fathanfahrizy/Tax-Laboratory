@@ -80,7 +80,7 @@ export default function Home() {
     <PageTransition>
     {/* --- INJEKSI SEO & SCHEMA MARKUP --- */}
     <Helmet>
-      <title>TaxLaboratory - Laboratorium Akuntansi Lanjut B Gunadarma</title>
+      <title>Tax Laboratory - Laboratorium Akuntansi Lanjut B Gunadarma</title>
       <meta name="description" content="Pusat informasi dan unduhan modul TaxLaboratory (Tax Lab Gundar). Platform resmi Laboratorium Akuntansi Lanjut B Universitas Gunadarma untuk praktikum perpajakan." />
       <meta name="keywords" content="tax laboratory, taxlaboratory, laboratorium akuntansi lanjut b, lab akuntansi lanjut b, tax lab gundar, lab pajak gunadarma" />
       <script type="application/ld+json">
