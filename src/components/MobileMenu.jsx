@@ -37,7 +37,7 @@ export default function MobileMenu({ isMobileMenuOpen, toggleDropdown, activeDro
               <Link to="/tata-tertib" onClick={closeAll} className={`px-6 py-3 transition-colors ${getSubLinkStyle('/tata-tertib')}`}>Tata Tertib</Link>
               <Link to="/modul" onClick={closeAll} className={`px-6 py-3 transition-colors ${getSubLinkStyle('/modul')}`}>Modul</Link>
               <Link to="/software-pajak" onClick={closeAll} className={`px-6 py-3 transition-colors ${getSubLinkStyle('/software-pajak')}`}>Software Pajak</Link>
-              <a href="https://djponline.pajak.go.id/" target="_blank" rel="noreferrer" onClick={closeAll} className="px-6 py-3 transition-colors text-blue-600">Portal DJP</a>
+              <a href="https://pajak.go.id/" target="_blank" rel="noreferrer" onClick={closeAll} className="px-6 py-3 transition-colors text-blue-600">Portal DJP</a>
             </div>
           </div>
         </div>
