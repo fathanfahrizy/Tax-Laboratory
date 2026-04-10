@@ -25,7 +25,7 @@ export default function Footer() {
               </h3>
             </div>
             <p className="text-slate-500 text-sm leading-relaxed max-w-sm mb-4">
-              Laboratorium Akuntansi Lanjut B Universitas Gunadarma. Platform terpadu penyedia modul pembelajaran, piranti lunak, dan pusat informasi praktikum.
+              Laboratorium Akuntansi Lanjut B Universitas Gunadarma. Platform terpadu penyedia modul pembelajaran, perangkat lunak, dan pusat informasi praktikum.
             </p>
           </div>
 
