@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
-import { DownloadIcon, GuideIcon } from './SoftwareIcons'; // AppIcon udah dihapus
+import { DownloadIcon, GuideIcon } from './SoftwareIcons';
 
-// =========================================
-// KOMPONEN KARTU SOFTWARE (GPU ACCELERATED)
-// =========================================
+
+// KOMPONEN KARTU SOFTWARE
+
 export default function SoftwareCard({ app }) {
   const [isActive, setIsActive] = useState(false);
   const cardRef = useRef(null);
@@ -44,14 +44,14 @@ export default function SoftwareCard({ app }) {
       `}
     >
       <div>
-        {/* Header Kartu: Logo Berbeda-beda & Versi */}
+        {/* Header Kartu */}
         <div className="flex justify-between items-start mb-8">
           
           <div className={`${app.theme.bg} ${app.theme.border} border p-4 rounded-2xl transition-transform duration-500 transform-gpu flex items-center justify-center
             md:group-hover:scale-110
             ${isActive ? 'max-md:scale-110' : 'max-md:scale-100'}
           `}>
-            {/* GAMBAR LOGO SOFTWARE DARI JSON LU */}
+            {/* Gambar Logo Software Dari JSON */}
             <img 
               src={app.icon} 
               alt={`Logo ${app.name}`} 

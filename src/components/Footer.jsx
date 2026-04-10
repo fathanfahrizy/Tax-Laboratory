@@ -5,13 +5,13 @@ export default function Footer() {
     <footer className="bg-white border-t border-slate-200 pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-6">
         
-        {/* === GRID MENU UTAMA === */}
+        {/* GRID MENU UTAMA */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-10">
           
-          {/* KOLOM 1: BRANDING (Lebih Lebar) */}
+          {/* KOLOM BRANDING */}
           <div className="lg:col-span-2 pr-0 lg:pr-8">
             <div className="flex items-center gap-3 mb-4">
-              {/* Bingkai Logo Minimalis */}
+              {/* Bingkai Logo */}
               <div className="w-10 h-10 bg-white rounded-lg p-1 border border-slate-200 shadow-sm flex items-center justify-center shrink-0">
                 <img 
                   src="/img-template/LogoTaxLab.webp" 
@@ -29,7 +29,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* KOLOM 2: AKSES CEPAT */}
+          {/* KOLOM AKSES CEPAT */}
           <div>
             <h4 className="text-slate-900 font-bold mb-4 text-base">Akses Cepat</h4>
             <ul className="space-y-3 text-sm font-medium">
@@ -48,7 +48,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* KOLOM 3: HUBUNGI KAMI (Tanpa Icon) */}
+          {/* KOLOM HUBUNGI KAMI */}
           <div>
             <h4 className="text-slate-900 font-bold mb-4 text-base">Hubungi Kami</h4>
             <ul className="space-y-3 text-sm font-medium text-slate-500">
@@ -69,7 +69,7 @@ export default function Footer() {
 
         </div>
 
-        {/* === BOTTOM COPYRIGHT & EXTRA LINKS === */}
+        {/* BOTTOM COPYRIGHT & EXTRA LINKS */}
         <div className="border-t border-slate-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-400 text-xs font-medium text-center md:text-left">
             &copy; {new Date().getFullYear()} TaxLaboratorium Gunadarma. All rights reserved.

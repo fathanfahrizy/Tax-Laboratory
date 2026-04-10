@@ -24,7 +24,7 @@ export default function NotFound() {
 
         <div className="relative z-10 text-center flex flex-col items-center animate-in fade-in zoom-in duration-700">
           
-          {/* Teks 404 Gede dengan Gradient */}
+          {/* Teks 404 */}
           <h1 className="text-[8rem] md:text-[12rem] font-black text-transparent bg-clip-text bg-gradient-to-br from-purple-900 via-purple-700 to-orange-500 leading-none mb-4 md:mb-0 drop-shadow-sm select-none">
             404
           </h1>

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import PageTransition from '../components/PageTransition';
 import { Helmet } from 'react-helmet-async';
 
-// IMPORT DATA & KOMPONEN EXTERNAL (PERFORMANCE BOOST)
+// IMPORT DATA & KOMPONEN EXTERNAL
 import { KETENTUAN_UMUM, KETERLAMBATAN_ABSENSI, PINDAH_SHIFT } from '../data/rulesData';
 import { RuleItem, SpecialRuleItem, WarningIcon } from '../components/RuleItem';
 
@@ -18,11 +18,11 @@ export default function TataTertib() {
         <meta name="description" content="Aturan berpakaian, ketentuan keterlambatan, absensi, dan tata tertib resmi pelaksanaan praktikum di Laboratorium Akuntansi Lanjut B (TaxLaboratory)." />
         <link rel="canonical" href="https://www.taxlaboratory.my.id/tata-tertib" />
       </Helmet>
-    {/* SEMANTIC HTML: Menggunakan <main> untuk SEO */}
+    {/* Menggunakan <main> untuk SEO */}
     <main className="pt-32 pb-32 min-h-screen bg-[#fafafa] font-sans text-slate-800">
       <div className="max-w-4xl mx-auto px-6">
         
-        {/* HEADER (SEO OPTIMIZED) */}
+        {/* HEADER */}
         <header className="text-center mb-24">
           {/* H1 Disuntik Keyword Utama */}
           <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
@@ -32,9 +32,7 @@ export default function TataTertib() {
           <p className="text-slate-500 text-lg">Seluruh praktikan <strong>Laboratorium Akuntansi Lanjut B</strong> (TaxLaboratorium) wajib membaca dan mematuhi pedoman praktikum berikut.</p>
         </header>
 
-        {/* ====================================
-            SECTION 1: KETENTUAN BERPAKAIAN
-        ==================================== */}
+        {/* SECTION 1: KETENTUAN BERPAKAIAN */}
         <section className="mb-20" aria-labelledby="aturan-pakaian">
           <div className="flex items-center gap-4 mb-6">
             <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900 text-white font-bold text-lg shadow-sm">1</span>
@@ -94,9 +92,7 @@ export default function TataTertib() {
           </div>
         </section>
 
-        {/* ====================================
-            SECTION 2: KETENTUAN UMUM
-        ==================================== */}
+        {/* SECTION 2: KETENTUAN UMUM */}
         <section className="mb-20" aria-labelledby="ketentuan-umum">
           <div className="flex items-center gap-4 mb-6">
             <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900 text-white font-bold text-lg shadow-sm">2</span>
@@ -115,9 +111,7 @@ export default function TataTertib() {
           </div>
         </section>
 
-        {/* ====================================
-            SECTION 3: KETERLAMBATAN
-        ==================================== */}
+        {/* ECTION 3: KETERLAMBATAN */}
         <section className="mb-20" aria-labelledby="keterlambatan">
           <div className="flex items-center gap-4 mb-6">
             <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900 text-white font-bold text-lg shadow-sm">3</span>
@@ -143,9 +137,7 @@ export default function TataTertib() {
           </div>
         </section>
 
-        {/* ====================================
-            SECTION 4: PINDAH SHIFT
-        ==================================== */}
+        {/* SECTION 4: PINDAH SHIFT */}
         <section className="mb-12" aria-labelledby="pindah-shift">
           <div className="flex items-center gap-4 mb-6">
             <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900 text-white font-bold text-lg shadow-sm">4</span>

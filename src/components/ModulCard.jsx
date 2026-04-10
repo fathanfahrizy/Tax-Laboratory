@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
 import { PdfIcon, ViewIcon } from './ModulIcons';
 
-// =========================================
-// KOMPONEN KARTU MODUL (GPU ACCELERATED)
-// =========================================
+
+// KOMPONEN KARTU MODUL
+
 export default function ModulCard({ modul }) {
   const [fileSize, setFileSize] = useState("Loading...");
   const [fileExt, setFileExt] = useState("FILE");

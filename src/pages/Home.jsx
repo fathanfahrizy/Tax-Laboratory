@@ -4,13 +4,13 @@ import { createPortal } from 'react-dom';
 import PageTransition from '../components/PageTransition';
 import { Helmet } from 'react-helmet-async';
 
-// IMPORT DATA DAN KOMPONEN DARI LUAR FILE!
+// IMPORT DATA DAN KOMPONEN DARI LUAR FILE
 import { ARTICLES_DATA } from '../data/articlesData';
 import { CloseIcon } from '../components/Icons';
 
-// =========================================
-// KOMPONEN: SCROLL REVEAL (EFEK HANYA 1 KALI / RUN ONCE)
-// =========================================
+
+// KOMPONEN SCROLL REVEAL
+
 const ScrollReveal = ({ children, className = "", delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
@@ -18,11 +18,11 @@ const ScrollReveal = ({ children, className = "", delay = 0 }) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry], obs) => {
-        // KUNCI UTAMA: Kalau elemen udah masuk layar...
+        // Kalau elemen udah masuk layar
         if (entry.isIntersecting) {
-          // ...Nyalakan animasinya
+          // Nyalakan animasinya
           setTimeout(() => setIsVisible(true), delay);
-          // ...Lalu MATIKAN sensornya selamanya (biar nggak ngulang pas di-scroll ke atas)
+          // Lalu matikan sensornya selamanya (biar nggak ngulang pas di-scroll ke atas)
           if (ref.current) obs.unobserve(ref.current); 
         }
       },
@@ -61,7 +61,7 @@ export default function Home() {
     else document.body.style.overflow = 'unset';
   }, [isModalOpen]);
 
-  // Observer khusus untuk Hero Card di HP (Juga 1 Kali Jalan Saja)
+  // Observer khusus untuk Hero Card di HP
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry], obs) => {
@@ -78,7 +78,7 @@ export default function Home() {
 
   return (
     <PageTransition>
-    {/* --- INJEKSI SEO & SCHEMA MARKUP --- */}
+    {/* INJEKSI SEO & SCHEMA MARKUP */}
     <Helmet>
       <title>Tax Laboratory - Laboratorium Akuntansi Lanjut B Gunadarma</title>
       <meta name="description" content="Pusat informasi dan unduhan modul TaxLaboratory (Tax Lab Gundar). Platform resmi Laboratorium Akuntansi Lanjut B Universitas Gunadarma untuk praktikum perpajakan." />
@@ -102,12 +102,11 @@ export default function Home() {
 
     <main className="bg-[#fafafa] font-sans text-gray-800 scroll-smooth relative z-0">
       
-      {/* === BACKGROUND DOTS === */}
+      {/* BACKGROUND DOTS */}
       <div className="absolute inset-0 -z-10 h-full w-full bg-[#fafafa] bg-[radial-gradient(#d1d5db_1px,transparent_1px)] [background-size:24px_24px]"></div>
 
-      {/* =========================================
-          HERO SECTION
-      ========================================= */}
+      {/* HERO SECTION */}
+
       <section className="relative pt-32 md:pt-36 pb-20 lg:pb-24 bg-purple-900 border-b-[12px] border-orange-500 overflow-hidden">
         <div className="absolute top-[-20%] right-[-10%] w-[700px] h-[700px] bg-gradient-to-bl from-purple-800 to-transparent rounded-full opacity-60 translate-x-1/4 -translate-y-1/4 pointer-events-none"></div>
         <div className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[80px] pointer-events-none"></div>
@@ -146,7 +145,7 @@ export default function Home() {
                 onClick={() => setIsModalOpen(true)}
               >
                 
-                {/* FIX: Pakai aspect-[4/3] murni biar bentuknya proporsional (nggak gepeng) dan hapus semua animasi zoom di HP */}
+                {/* Pakai aspect-[4/3] murni biar bentuknya proporsional dan hapus semua animasi zoom di HP */}
                 <div className="w-full aspect-[4/2] lg:aspect-[16/9] rounded-[1.8rem] overflow-hidden relative shadow-inner">
                     <img 
                       src="/img-team/foto-taxlab.webp" 
@@ -159,7 +158,7 @@ export default function Home() {
                       `} 
                     />
                     
-                  {/* FIX: Overlay Icon Zoom dibikin HANYA MUNCUL DI PC (hidden lg:flex) */}
+                  {/* Overlay Icon Zoom dibikin hanya muncul di PC */}
                   <div className="absolute inset-0 transition-colors duration-500 hidden lg:flex items-center justify-center lg:bg-transparent lg:group-hover:bg-slate-900/30">
                     <div className="bg-white/20 backdrop-blur-md text-white p-4 rounded-full transition-all duration-500 shadow-2xl border border-white/30 transform-gpu lg:opacity-0 lg:scale-50 lg:group-hover:opacity-100 lg:group-hover:scale-100">
                       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
@@ -192,9 +191,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =========================================
-          PROFIL BOX 
-      ========================================= */}
+      {/* PROFIL BOX */}
       <section className="py-16 max-w-7xl mx-auto px-6">
         <ScrollReveal>
           <header className="mb-10 border-b border-gray-200 pb-4">
@@ -207,7 +204,7 @@ export default function Home() {
           <ScrollReveal className="lg:col-span-8">
             <div className="bg-white rounded-xl p-10 lg:p-14 border border-gray-100 shadow-sm flex flex-col justify-center hover:border-purple-300 transition-colors h-full">
               <h3 className="text-3xl md:text-4xl font-black text-purple-900 mb-6">Pusat Studi & Praktik Pajak Terpadu</h3>
-              {/* FIX: Injeksi keyword "Lab akuntansi gunadarma" secara natural */}
+              {/* Injeksi keyword "Lab akuntansi gunadarma" */}
               <p className="text-gray-600 text-lg mb-8 leading-relaxed text-justify">
                 Sebagai pusat pembelajaran yang unggul, <strong>Lab akuntansi gunadarma</strong> terus berkomitmen untuk menjembatani kesenjangan antara teori akademis dan kebutuhan industri perpajakan. Kami memfasilitasi mahasiswa dengan simulasi pelaporan pajak riil di <strong>Laboratorium Akuntansi Lanjut B</strong>.
               </p>
@@ -234,9 +231,7 @@ export default function Home() {
         </article>
       </section>
 
-      {/* =========================================
-          LAYANAN PRAKTIKUM
-      ========================================= */}
+      {/* LAYANAN PRAKTIKUM */}
       <section className="py-20 bg-[#fafafa]">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal>
@@ -303,9 +298,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =========================================
-          LOKASI BOX
-      ========================================= */}
+      {/* LOKASI BOX */}
       <section className="py-20 bg-[#fafafa]">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal>
@@ -326,9 +319,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =========================================
-          FAQ & KONTAK
-      ========================================= */}
+      {/* FAQ & KONTAK */}
       <section className="py-24 bg-white border-t border-gray-200">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto px-6 text-center">
@@ -350,9 +341,7 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* =========================================
-          MODAL INTERAKTIF
-      ========================================= */}
+      {/* MODAL INTERAKTIF */}
       {isModalOpen && createPortal(
         <div 
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 sm:p-6" 

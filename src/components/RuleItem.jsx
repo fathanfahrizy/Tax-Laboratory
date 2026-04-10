@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 
-// =========================================
-// KOMPONEN: LIST ITEM INTERAKTIF (GPU ACCELERATED)
-// =========================================
+
+// KOMPONEN LIST ITEM INTERAKTIF
+
 export const RuleItem = ({ letter, children }) => {
   const [isActive, setIsActive] = useState(false);
   const itemRef = useRef(null);
@@ -38,9 +38,9 @@ export const RuleItem = ({ letter, children }) => {
   );
 };
 
-// =========================================
-// KOMPONEN: LIST ITEM KHUSUS WARNA MERAH (RULE G)
-// =========================================
+
+// KOMPONEN LIST ITEM KHUSUS WARNA MERAH (RULE G)
+
 export const SpecialRuleItem = ({ letter, children }) => {
   const [isActive, setIsActive] = useState(false);
   const itemRef = useRef(null);
