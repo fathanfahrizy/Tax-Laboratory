@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import PageTransition from '../components/PageTransition';
-import { Helmet } from 'react-helmet-async'; // <-- IMPORT HELMET DITAMBAHKAN DI SINI
+import { Helmet } from 'react-helmet-async';
 
 // IMPORT DATA & KOMPONEN EXTERNAL 
 import { FAQS_DATA } from '../data/faqData';
@@ -22,7 +22,7 @@ export default function Faq() {
 
   return (
     <PageTransition>
-    {/* --- INJEKSI SEO & FAQ SCHEMA MARKUP --- */}
+    {/* INJEKSI SEO & FAQ SCHEMA MARKUP */}
     <Helmet>
       <title>FAQ Praktikum - Laboratorium Pajak Gunadarma</title>
       <meta name="description" content="Temukan jawaban cepat untuk pertanyaan umum seputar kegiatan praktikum dan aturan di Laboratorium Akuntansi Lanjut B (TaxLaboratorium) Universitas Gunadarma." />
@@ -33,8 +33,8 @@ export default function Faq() {
           "@type": "FAQPage",
           "mainEntity": FAQS_DATA.map((faq) => ({
             "@type": "Question",
-            // NOTE: Pastikan 'faq.question' dan 'faq.answer' sesuai dengan nama properti di file faqData kamu.
-            // Kalau di file kamu namanya 'q' dan 'a', maka otomatis terbaca berkat operator || di bawah ini.
+            // NOTE: Pastikan 'faq.question' dan 'faq.answer' sesuai dengan nama properti di file faqData
+            // Kalau di file namanya 'q' dan 'a', maka otomatis terbaca berkat operator ||
             "name": faq.question || faq.q || "Pertanyaan Praktikum", 
             "acceptedAnswer": {
               "@type": "Answer",
@@ -45,7 +45,7 @@ export default function Faq() {
       </script>
     </Helmet>
 
-    {/* SEMANTIC HTML: Menggunakan <main> untuk performa SEO */}
+    {/* Menggunakan <main> untuk performa SEO */}
     <main className="pt-32 pb-32 min-h-screen bg-[#fafafa] font-sans text-slate-800 relative overflow-hidden">
       
       {/* Background Decor */}
@@ -54,7 +54,7 @@ export default function Faq() {
 
       <div className="max-w-3xl mx-auto px-6 relative z-10">
         
-        {/* HEADER SECTION (SEO OPTIMIZED) */}
+        {/* Header Section */}
         <header className="text-center mb-16 flex flex-col items-center">
           <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
             FAQ <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">Laboratorium Pajak</span>
@@ -64,7 +64,7 @@ export default function Faq() {
           </p>
         </header>
 
-        {/* FAQ LIST CONTAINER */}
+        {/* FAQ List Container */}
         <section aria-label="Daftar Pertanyaan yang Sering Diajukan" className="space-y-4">
           {FAQS_DATA.map((f, i) => (
             <FaqItem 
@@ -77,7 +77,7 @@ export default function Faq() {
           ))}
         </section>
         
-        {/* FOOTER TEXT INFO */}
+        {/* Footer Text Info */}
         <footer className="mt-16 text-center">
           <p className="text-slate-500 font-medium">
             Tidak menemukan jawaban yang Anda cari? <br className="md:hidden" />

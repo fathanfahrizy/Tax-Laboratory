@@ -1,8 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 
-// =========================================
-// KOMPONEN: SCROLL REVEAL CARD (GPU ACCELERATED)
-// =========================================
+// KOMPONEN SCROLL REVEAL CARD
+
 export default function ContactCard({ children, className = "", delay = 0 }) {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef(null);

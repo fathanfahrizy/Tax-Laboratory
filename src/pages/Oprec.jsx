@@ -32,9 +32,7 @@ export default function Oprec() {
       </Helmet>
       <main className="bg-[#fafafa] font-sans text-slate-800 scroll-smooth relative z-0 min-h-screen overflow-x-hidden">
           
-          {/* =========================================
-              1. HERO SECTION (SEO H1)
-          ========================================= */}
+          {/* HERO SECTION (SEO H1) */}
           <section className="relative pt-40 pb-32 bg-purple-900 border-b-[8px] border-orange-500 overflow-hidden">
             <div className="absolute top-[-20%] right-[-10%] w-[700px] h-[700px] bg-gradient-to-bl from-purple-800 to-transparent rounded-full opacity-60 translate-x-1/4 -translate-y-1/4 pointer-events-none"></div>
             <div className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[80px] pointer-events-none"></div>
@@ -99,9 +97,7 @@ export default function Oprec() {
             </div>
           </section>
 
-          {/* =========================================
-            2. PERSYARATAN UMUM
-        ========================================= */}
+          {/* PERSYARATAN UMUM */}
         <section aria-label="Persyaratan Umum Asisten Lab" className="py-24 bg-white relative z-20 rounded-t-[3rem] shadow-[0_-20px_40px_rgba(0,0,0,0.05)] border-b border-slate-100 -mt-8">
           <div className="max-w-7xl mx-auto px-6">
             <header className="text-center mb-16">
@@ -160,9 +156,7 @@ export default function Oprec() {
           </div>
         </section>
 
-          {/* =========================================
-              3. PERSYARATAN KHUSUS
-          ========================================= */}
+          {/* PERSYARATAN KHUSUS */}
           <section aria-label="Pilih Divisi Laboratorium Pajak" className="py-24 bg-[#fafafa]">
             <div className="max-w-7xl mx-auto px-6">
               <header className="text-center mb-16">
@@ -255,9 +249,7 @@ export default function Oprec() {
             </div>
           </section>
 
-          {/* =========================================
-            4. TIMELINE OPREC (LOOPING MENGGUNAKAN DATA LUAR)
-        ========================================= */}
+          {/* TIMELINE OPREC (LOOPING MENGGUNAKAN DATA LUAR) */}
         <section aria-label="Jadwal Seleksi TaxLaboratorium" className="py-24 bg-[#fafafa] border-y border-slate-100 relative">
           <div className="max-w-6xl mx-auto px-6">
             <header className="text-center mb-24">
@@ -279,9 +271,7 @@ export default function Oprec() {
           </div>
         </section>
 
-          {/* =========================================
-              5. PENDAFTARAN
-          ========================================= */}
+          {/* PENDAFTARAN */}
           <section className="py-24 bg-[#fafafa]">
             <div className="max-w-4xl mx-auto px-6">
               <div className="bg-white rounded-[3rem] p-12 md:p-20 text-center border border-slate-200 shadow-xl">
@@ -308,9 +298,8 @@ export default function Oprec() {
 
       </main>
 
-      {/* =========================================
-          MODAL IMAGE (PORTAL, IMPORTED ICONS, GPU)
-      ========================================= */}
+      {/* MODAL IMAGE (PORTAL, IMPORTED ICONS, GPU) */}
+      
       {isImageOpen && createPortal(
         <div className="fixed inset-0 z-[99999] flex flex-col items-center justify-center p-4 sm:p-10">
           <div 

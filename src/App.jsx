@@ -1,7 +1,7 @@
 import { Suspense, lazy } from 'react'; // Pakai lazy buat Code Splitting
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { Analytics } from "@vercel/analytics/react"; // Import Analytics Vercel
+import { Analytics } from "@vercel/analytics/react";
 
 // IMPORT KOMPONEN TETAP (Non-Lazy)
 import Navbar from './components/Navbar';

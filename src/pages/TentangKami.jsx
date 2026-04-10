@@ -2,12 +2,12 @@ import { useEffect, useState, useRef } from 'react';
 import PageTransition from '../components/PageTransition';
 import { Helmet } from 'react-helmet-async';
 
-// Mengimpor data statis dari luar untuk mencegah re-render & meringankan ukuran file
+// Mengimpor data statis dari luar
 import { VISI_DATA, MISI_DATA } from '../data/misiData';
 
-// =========================================
-// 1. SCROLL REVEAL (EFEK TRANSISI MUNCUL HANYA 1 KALI / ONE-WAY TICKET)
-// =========================================
+
+// 1. SCROLL REVEAL
+
 const ScrollReveal = ({ children, className = "", delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
@@ -40,9 +40,9 @@ const ScrollReveal = ({ children, className = "", delay = 0 }) => {
   );
 };
 
-// =========================================
-// 2. KOMPONEN ITEM MISI (HP: SCROLL KE TENGAH | PC: HOVER)
-// =========================================
+
+// 2. KOMPONEN ITEM MISI 
+
 const MisiItem = ({ misi, index }) => {
   const [inView, setInView] = useState(false);
   const itemRef = useRef(null);
@@ -86,9 +86,9 @@ const MisiItem = ({ misi, index }) => {
 
 export default function TentangKami() {
   
-  // =========================================
-  // STATE & OBSERVER UNTUK KARTU (HP: SCROLL KE TENGAH | PC: HOVER)
-  // =========================================
+
+  // STATE & OBSERVER UNTUK KARTU
+
   const [heroInView, setHeroInView] = useState(false);
   const [visiInView, setVisiInView] = useState(false);
   const [misiInView, setMisiInView] = useState(false);
@@ -174,13 +174,13 @@ export default function TentangKami() {
             <div className={`absolute top-0 right-0 w-[90%] h-[85%] rounded-[2rem] overflow-hidden shadow-2xl z-10 border-4 border-white transform transition-all duration-700
                 /* 📱 EFEK HP */
                 ${heroInView ? 'max-lg:rotate-0 max-lg:-translate-y-2' : 'max-lg:rotate-2 max-lg:translate-y-0'}
-                /* 💻 EFEK PC */
+                /* EFEK PC */
                 lg:rotate-2 lg:group-hover:rotate-0 lg:group-hover:-translate-y-2
             `}>
               <div className={`absolute inset-0 mix-blend-multiply z-10 transition-colors duration-500
-                  /* 📱 EFEK HP */
+                  /* EFEK HP */
                   ${heroInView ? 'max-lg:bg-transparent' : 'max-lg:bg-purple-900/10'}
-                  /* 💻 EFEK PC */
+                  /* EFEK PC */
                   lg:bg-purple-900/10 lg:group-hover:bg-transparent
               `}></div>
               <img 
@@ -193,9 +193,9 @@ export default function TentangKami() {
             </div>
 
             <div className={`absolute bottom-4 -left-4 w-[65%] h-[50%] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.3)] z-20 border-4 border-white transform hidden sm:block transition-all duration-700
-                /* 📱 EFEK HP/Tablet */
+                /* EFEK HP/Tablet */
                 ${heroInView ? 'max-lg:rotate-0 max-lg:-translate-y-2' : 'max-lg:-rotate-3 max-lg:translate-y-0'}
-                /* 💻 EFEK PC */
+                /* EFEK PC */
                 lg:-rotate-3 lg:group-hover:rotate-0 lg:group-hover:-translate-y-2
             `}>
               <img 
@@ -217,16 +217,16 @@ export default function TentangKami() {
           <div 
             ref={visiRef}
             className={`lg:col-span-5 bg-purple-900 rounded-[2.5rem] p-10 md:p-14 text-white relative overflow-hidden flex flex-col justify-center group border border-purple-800 transition-all duration-700 transform-gpu
-              /* 📱 EFEK HP */
+              /* EFEK HP */
               ${visiInView ? 'max-lg:-translate-y-2 max-lg:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)]' : 'max-lg:translate-y-0 max-lg:shadow-xl'}
-              /* 💻 EFEK PC */
+              /* EFEK PC */
               lg:shadow-xl lg:hover:-translate-y-2 lg:hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)]
             `}
           >
             <div className={`absolute -top-6 -right-2 text-[12rem] font-serif leading-none text-purple-800/60 opacity-50 pointer-events-none transition-transform duration-700
-                /* 📱 EFEK HP */
+                /* EFEK HP */
                 ${visiInView ? 'max-lg:scale-110' : 'max-lg:scale-100'}
-                /* 💻 EFEK PC */
+                /* EFEK PC */
                 lg:scale-100 lg:group-hover:scale-110
             `}>"</div>
             <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-orange-400 to-yellow-400"></div>
@@ -243,9 +243,9 @@ export default function TentangKami() {
           <div 
             ref={misiRef}
             className={`lg:col-span-7 bg-white rounded-[2.5rem] p-10 md:p-12 border border-gray-100 flex flex-col justify-center transition-all duration-700 transform-gpu
-              /* 📱 EFEK HP */
+              /* EFEK HP */
               ${misiInView ? 'max-lg:-translate-y-2 max-lg:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.15)]' : 'max-lg:translate-y-0 max-lg:shadow-md'}
-              /* 💻 EFEK PC */
+              /* EFEK PC */
               lg:shadow-md lg:hover:-translate-y-2 lg:hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.15)]
             `}
           >

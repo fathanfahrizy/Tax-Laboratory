@@ -88,7 +88,6 @@ export default function Team() {
             <h3 className="text-xl sm:text-2xl font-bold text-purple-900 mb-6 sm:mb-8 border-l-[4px] sm:border-l-[6px] border-orange-500 pl-3 sm:pl-4"> 
               Asisten <span className="text-xs sm:text-sm text-gray-500 ml-1 sm:ml-2">({currentData.asisten.length} Anggota)</span>
             </h3>
-            {/* INI KUNCI UTAMANYA: grid-cols-2 untuk HP, gap diperkecil (gap-3) */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
               {currentData.asisten.map((member, index) => (
                 <MemberCard key={`${activeYear}-asisten-${index}`} member={member} />
@@ -101,7 +100,6 @@ export default function Team() {
             <h3 className="text-xl sm:text-2xl font-bold text-purple-900 mb-6 sm:mb-8 border-l-[4px] sm:border-l-[6px] border-orange-500 pl-3 sm:pl-4"> 
               IT Support <span className="text-xs sm:text-sm text-gray-500 ml-1 sm:ml-2">({currentData.itSupport.length} Anggota)</span>
             </h3>
-            {/* INI KUNCI UTAMANYA: grid-cols-2 untuk HP, gap diperkecil (gap-3) */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
               {currentData.itSupport.map((member, index) => (
                 <MemberCard key={`${activeYear}-it-${index}`} member={member} />

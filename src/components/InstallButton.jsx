@@ -8,11 +8,11 @@ export default function InstallButton() {
   const [isInstalled, setIsInstalled] = useState(false);
 
   useEffect(() => {
-    // 1. Cek apakah web INI SUDAH DI-INSTALL (Berlaku di semua device)
+    // 1. Cek apakah web sudah di install (Berlaku di semua device)
     const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
     if (isStandalone) {
       setIsInstalled(true);
-      return; // Kalau udah di-install, stop di sini, tombol nggak usah muncul
+      return; // Kalau sudah di install, tombol nggak usah muncul
     }
 
     // 2. Cek apakah device-nya buatan Apple (iPhone/iPad/iPod)

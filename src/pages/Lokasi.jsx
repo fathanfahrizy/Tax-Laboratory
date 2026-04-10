@@ -11,18 +11,18 @@ export default function Lokasi() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState(null);
 
-  // =========================================
+
   // STATE & LOGIC: LIVE JAM OPERASIONAL
-  // =========================================
+
   const [now, setNow] = useState(new Date());
 
-  // Update waktu setiap 1 menit biar statusnya akurat tanpa perlu refresh
+  // Update waktu setiap 1 menit biar statusnya akurat
   useEffect(() => {
     const interval = setInterval(() => setNow(new Date()), 60000);
     return () => clearInterval(interval);
   }, []);
 
-  // Fungsi cerdas buat ngecek status berdasar jadwal spesifik tiap lokasi
+  // Fungsi buat ngecek status berdasar jadwal spesifik tiap lokasi
   const getLiveStatus = (hoursArray) => {
     const daysMap = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
     const currentDayStr = daysMap[now.getDay()];
@@ -44,7 +44,7 @@ export default function Lokasi() {
     const endVal = parseInt(endStr.split(":")[0]) + parseInt(endStr.split(":")[1]) / 60;
     const currentVal = now.getHours() + now.getMinutes() / 60;
 
-    // 3. Cek apakah saat ini di luar jam operasional yang ditentukan?
+    // 3. Cek apakah saat ini di luar jam operasional yang ditentukan
     if (currentVal < startVal || currentVal >= endVal) {
       return { text: "TUTUP", badgeBg: "bg-rose-50", badgeText: "text-rose-600", dotColor: "bg-rose-500", pulse: false };
     }
@@ -59,7 +59,7 @@ export default function Lokasi() {
       }
     }
 
-    // 5. Kalau lolos semua filter di atas, berarti BUKA!
+    // 5. Kalau lolos semua filter di atas, berarti buka
     return { text: "BUKA", badgeBg: "bg-emerald-50", badgeText: "text-emerald-600", dotColor: "bg-emerald-500", pulse: true };
   };
 
@@ -94,7 +94,7 @@ export default function Lokasi() {
       
       <main className="pt-32 pb-24 min-h-screen bg-[#fafafa] font-sans text-slate-800 flex flex-col relative z-0">
         
-        {/* HEADER TEXT (SEO OPTIMIZED) */}
+        {/* HEADER TEXT */}
         <header className="max-w-7xl mx-auto w-full px-6 mb-10 text-center lg:text-left">
           <h1 className="text-4xl md:text-[2.75rem] font-extrabold text-slate-900 tracking-tight mb-3">
             Lokasi <span className="text-orange-500">Laboratorium Pajak</span>
@@ -108,8 +108,8 @@ export default function Lokasi() {
         <section aria-label="Peta dan Daftar Lokasi" className="max-w-7xl mx-auto w-full px-6 flex-grow flex flex-col">
           <div className="bg-white rounded-[2rem] shadow-2xl border border-slate-200 overflow-hidden flex flex-col lg:flex-row h-auto lg:h-[75vh]">
             
-            {/* KOLOM KIRI: SEARCH & LIST */}
-            {/* FIX: Border ditebelin jadi 8px (border-b-[8px]) dan z-index dinaikin biar shadow-nya jatuh ke atas map */}
+            {/* KOLOM KIRI SEARCH & LIST */}
+            {/* Border ditebelin jadi 8px dan z-index dinaikin biar shadow-nya jatuh ke atas map */}
             <div className="w-full lg:w-[35%] flex flex-col border-b-[8px] lg:border-b-0 lg:border-r-[8px] border-orange-500 bg-white z-20 h-[450px] lg:h-full shadow-[0_15px_30px_-5px_rgba(0,0,0,0.3)]">
               
               <div className="p-6 border-b border-slate-100 bg-white relative z-20 shadow-sm">
@@ -191,7 +191,7 @@ export default function Lokasi() {
               </div>
             </div>
 
-            {/* KOLOM KANAN: MAPS */}
+            {/* KOLOM KANAN MAPS */}
             <div className="w-full lg:w-[65%] h-[50vh] lg:h-full bg-slate-100 relative overflow-hidden">
               {activeLocation ? (
                 <iframe
@@ -222,9 +222,8 @@ export default function Lokasi() {
         `}} />
       </main>
 
-      {/* =========================================
-          MODAL "MORE INFO"
-      ========================================= */}
+      {/* MODAL "MORE INFO" */}
+
       {isModalOpen && modalData && createPortal(
         <div className="fixed inset-0 z-[90] flex items-center justify-center px-4 py-6 pt-[100px] sm:pt-[120px] md:px-8">
           <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm cursor-pointer transition-opacity" onClick={() => setIsModalOpen(false)}></div>

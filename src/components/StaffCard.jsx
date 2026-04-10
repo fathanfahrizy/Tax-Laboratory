@@ -2,13 +2,13 @@ export default function StaffCard({ staff }) {
   return (
     <article className="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-purple-200 transition-all duration-300 flex flex-col transform-gpu">
       
-      {/* Container Foto - Rasio Portrait Formal */}
+      {/* Container Foto */}
       <div className="relative w-full aspect-[4/5] bg-gradient-to-b from-slate-100 to-slate-200 flex items-end justify-center overflow-hidden">
         
-        {/* Ornamen Latar Belakang Lingkaran Halus (Sangat Ringan) */}
+        {/* Ornamen Latar Belakang Lingkaran Halus */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 aspect-square bg-white/40 rounded-full blur-2xl pointer-events-none"></div>
 
-        {/* Foto Utama Pimpinan - Satu Gambar Saja (Anti-Lag) */}
+        {/* Foto Utama Pimpinan */}
         <img 
           src={staff.img} 
           alt={`Foto ${staff.role} TaxLaboratorium - ${staff.name}`} 
@@ -19,7 +19,7 @@ export default function StaffCard({ staff }) {
         />
       </div>
 
-      {/* Detail Konten - Tipografi Klasik & Elegan */}
+      {/* Detail Konten */}
       <div className="p-6 md:p-8 flex flex-col flex-grow text-center bg-white">
         
         {/* Jabatan */}
@@ -32,7 +32,7 @@ export default function StaffCard({ staff }) {
           {staff.name}
         </h3>
         
-        {/* Garis Aksentuasi Klasik */}
+        {/* Garis */}
         <div className="w-10 h-1 bg-orange-500 mx-auto mb-4 rounded-full"></div>
         
         {/* Kepakaran */}

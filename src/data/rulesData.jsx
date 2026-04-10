@@ -1,4 +1,4 @@
-// Data statis Tata Tertib dipisah untuk mencegah re-render yang memberatkan memori
+// Data statis Tata Tertib dipisah
 export const KETENTUAN_UMUM = [
   <>Seluruh praktikan wajib berpakaian rapih sesuai dengan peraturan yang ada.</>,
   <>Seluruh praktikan wajib membawa <span className="inline-block px-3 py-1 bg-slate-100 text-slate-700 font-extrabold text-[11px] tracking-wider rounded-full border border-slate-200 shadow-sm mx-1.5 align-middle">KRS AKTIF</span> di minggu pertama praktikum dan minggu ujian.</>,

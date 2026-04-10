@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 
-// =========================================
-// 1. IKON STATIS (REUSABLE)
-// =========================================
+
+// IKON STATIS
+
 export const CheckIcon = () => (
   <svg className="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
@@ -15,9 +15,9 @@ export const CloseIcon = () => (
   </svg>
 );
 
-// =========================================
-// 2. KARTU PERSYARATAN (ON-PAGE EFFECT BERULANG)
-// =========================================
+
+// KARTU PERSYARATAN (ON-PAGE EFFECT BERULANG)
+
 export const ScrollRevealCard = ({ children, className = "" }) => {
   const [isActive, setIsActive] = useState(false);
   const cardRef = useRef(null);
@@ -48,9 +48,9 @@ export const ScrollRevealCard = ({ children, className = "" }) => {
   );
 };
 
-// =========================================
-// 3. ITEM TIMELINE (RESPONSIVE FIX - ANTI OVERLAP)
-// =========================================
+
+// ITEM TIMELINE
+
 export const TimelineRevealItem = ({ alur, isLeft }) => {
   const [inView, setInView] = useState(false);
   const itemRef = useRef(null);

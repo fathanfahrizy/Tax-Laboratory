@@ -3,7 +3,7 @@ import modulData from '../data/modulData.json';
 import PageTransition from '../components/PageTransition';
 import { Helmet } from 'react-helmet-async';
 
-// IMPORT KOMPONEN DARI LUAR (Meringankan Render)
+// IMPORT KOMPONEN DARI LUAR
 import ModulCard from '../components/ModulCard';
 import { FolderIcon, FilterIcon } from '../components/ModulIcons';
 
@@ -32,11 +32,11 @@ export default function Modul() {
         <title>Download Modul Pajak - Laboratorium Akuntansi Lanjut B</title>
         <meta name="description" content="Pusat unduhan modul pembelajaran dan praktikum pajak resmi dari TaxLaboratorium Universitas Gunadarma." />
       </Helmet>
-    {/* SEMANTIC HTML: <main> untuk meningkatkan skor SEO */}
+    {/* <main> untuk meningkatkan skor SEO */}
     <main className="pt-32 pb-32 min-h-screen bg-[#fafafa] font-sans text-slate-800">
       <div className="max-w-6xl mx-auto px-6">
         
-        {/* HEADER (SEO OPTIMIZED) */}
+        {/* HEADER */}
         <header className="text-center mb-16">
           <div className="inline-flex items-center gap-3 mb-6 bg-white border border-slate-200 px-5 py-2 rounded-full shadow-sm">
             <div className="text-orange-500"><FolderIcon /></div>

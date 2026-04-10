@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import PageTransition from '../components/PageTransition';
 import { Helmet } from 'react-helmet-async';
 
-// IMPORT KOMPONEN DARI LUAR (Meringankan Render)
+// IMPORT KOMPONEN DARI LUAR
 import { EmailIcon, InstagramIcon } from '../components/ContactIcons';
 import ContactCard from '../components/ContactCard';
 
@@ -18,7 +18,7 @@ export default function Kontak() {
         <meta name="description" content="Punya pertanyaan seputar praktikum? Hubungi tim Laboratorium Akuntansi Lanjut B melalui email resmi atau media sosial Instagram TaxLaboratory." />
         <link rel="canonical" href="https://www.taxlaboratory.my.id/kontak" />
       </Helmet>
-    {/* SEMANTIC HTML: Menggunakan <main> untuk menaikkan skor SEO */}
+    {/* Menggunakan <main> untuk menaikkan skor SEO */}
     <main className="pt-32 pb-32 min-h-screen bg-[#fafafa] font-sans text-slate-800 relative overflow-hidden">
       
       {/* Background Decor */}
@@ -27,7 +27,7 @@ export default function Kontak() {
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         
-        {/* HEADER SECTION (SEO OPTIMIZED) */}
+        {/* HEADER SECTION */}
         <header className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
           <div className="inline-flex items-center gap-3 mb-6 bg-white border border-slate-200 px-5 py-2 rounded-full shadow-sm">
             <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></div>
@@ -45,7 +45,7 @@ export default function Kontak() {
           </p>
         </header>
 
-        {/* CONTACT GRID - Diperbarui agar di HP posisinya di tengah dan proporsional */}
+        {/* CONTACT GRID */}
         <section aria-label="Jalur Komunikasi Laboratorium" className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-20 max-w-md mx-auto md:max-w-none w-full">
           
           {/* Card Email */}
@@ -92,7 +92,7 @@ export default function Kontak() {
 
         </section>
 
-        {/* INFO TAMBAHAN (Mindful Note) */}
+        {/* INFO TAMBAHAN */}
         <aside className="max-w-2xl mx-auto bg-purple-900 rounded-[2rem] p-8 md:p-12 text-center shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
           <h3 className="text-white text-xl font-bold mb-4 relative z-10">Waktu Operasional Pesan</h3>

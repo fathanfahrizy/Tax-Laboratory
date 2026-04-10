@@ -1,6 +1,5 @@
-// =========================================
 // ICONS (PURE SVG STATIS)
-// =========================================
+
 export const ChevronIcon = ({ className }) => (
   <svg className={`w-6 h-6 shrink-0 transition-transform duration-300 ${className}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
@@ -13,9 +12,9 @@ export const ChatBubbleIcon = () => (
   </svg>
 );
 
-// =========================================
+
 // KOMPONEN ITEM FAQ
-// =========================================
+
 export const FaqItem = ({ f, index, active, toggleFaq }) => {
   const isActive = active === index;
   
