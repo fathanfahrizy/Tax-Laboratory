@@ -35,7 +35,7 @@ export default function ModulCard({ modul }) {
     };
   }, []);
 
-  // Fetch Ukuran File secara Asynchronous (Tidak nge-block halaman)
+  // Fetch Ukuran File
   useEffect(() => {
     let isMounted = true;
     const extension = modul.link.split('.').pop().toUpperCase();
@@ -61,10 +61,10 @@ export default function ModulCard({ modul }) {
     };
 
     fetchFileSize();
-    return () => { isMounted = false; } // Cleanup API call kalau komponen di-unmount
+    return () => { isMounted = false; } 
   }, [modul.link]);
 
-  // Fungsi untuk memicu download paksa menggunakan Blob
+  // Fungsi untuk memicu download paksa
   const handleDownload = async (e) => {
     e.preventDefault();
     try {
@@ -80,10 +80,13 @@ export default function ModulCard({ modul }) {
       window.URL.revokeObjectURL(url);
     } catch (error) {
       console.error("Download failed", error);
-      // Fallback jika fetch gagal
       window.open(modul.link, '_blank');
     }
   };
+
+  // Bikin URL khusus pakai Google Viewer untuk tombol BACA
+  const absoluteUrl = `https://taxlaboratory.my.id${modul.link}`;
+  const bacaUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(absoluteUrl)}`;
 
   return (
     <article 
@@ -133,8 +136,9 @@ export default function ModulCard({ modul }) {
         </div>
 
         <div className="flex gap-3 w-full sm:w-auto">
+          {/* TOMBOL BACA (MENGGUNAKAN GOOGLE VIEWER) */}
           <a 
-            href={modul.link} 
+            href={bacaUrl} 
             target="_blank" 
             rel="noopener noreferrer"
             aria-label={`Baca Modul: ${modul.title}`}
@@ -144,6 +148,7 @@ export default function ModulCard({ modul }) {
             <span>Baca</span>
           </a>
 
+          {/* TOMBOL DOWNLOAD (TETAP PAKAI BLOB/FETCH) */}
           <button 
             onClick={handleDownload}
             aria-label={`Download Modul: ${modul.title}`}
