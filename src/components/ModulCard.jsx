@@ -1,8 +1,12 @@
 import { useEffect, useState, useRef } from 'react';
 import { PdfIcon, ViewIcon } from './ModulIcons';
 
-
-// KOMPONEN KARTU MODUL
+// Ikon tambahan untuk tombol download
+const DownloadIcon = () => (
+  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+  </svg>
+);
 
 export default function ModulCard({ modul }) {
   const [fileSize, setFileSize] = useState("Loading...");
@@ -60,6 +64,27 @@ export default function ModulCard({ modul }) {
     return () => { isMounted = false; } // Cleanup API call kalau komponen di-unmount
   }, [modul.link]);
 
+  // Fungsi untuk memicu download paksa menggunakan Blob
+  const handleDownload = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(modul.link);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${modul.title}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Download failed", error);
+      // Fallback jika fetch gagal
+      window.open(modul.link, '_blank');
+    }
+  };
+
   return (
     <article 
       ref={cardRef}
@@ -107,16 +132,27 @@ export default function ModulCard({ modul }) {
           </div>
         </div>
 
-        <a 
-          href={modul.link} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          aria-label={`Baca Modul: ${modul.title}`}
-          className="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-purple-900 text-white font-bold py-3 px-6 rounded-xl transition-colors duration-300 shadow-sm"
-        >
-          <ViewIcon />
-          <span>Baca Modul</span>
-        </a>
+        <div className="flex gap-3 w-full sm:w-auto">
+          <a 
+            href={modul.link} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label={`Baca Modul: ${modul.title}`}
+            className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-3 px-6 rounded-xl transition-colors duration-300 border border-slate-200"
+          >
+            <ViewIcon />
+            <span>Baca</span>
+          </a>
+
+          <button 
+            onClick={handleDownload}
+            aria-label={`Download Modul: ${modul.title}`}
+            className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-xl transition-colors duration-300 shadow-sm"
+          >
+            <DownloadIcon />
+            <span>Download</span>
+          </button>
+        </div>
       </div>
     </article>
   );
